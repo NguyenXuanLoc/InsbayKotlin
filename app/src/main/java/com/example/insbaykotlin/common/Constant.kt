@@ -48,6 +48,9 @@ object Api {
 
     const val LOGIN_ONMOBI = "auth/authorize"
 
+
+    const val GET_ANONYMOUS_TOKEN = "users/api/v2/users/anonymous_token"
+
 }
 
 object Key {
@@ -57,3 +60,35 @@ object Key {
     const val WAIT_TIME = "waitTime"
     const val ON_MOBI = "OnMobi"
 }
+
+object Env {
+    const val BASE_URL_PUBLIC = "http://insbay.sigma-solutions.vn/pub/"
+
+
+    const val GCM_PROJECT_ID = "417654659308"
+    const val SOCKET_SERVER_URL = "https://ws.insbay.app/"
+    const val BASE_URL_CLOTIFY_ANO = "http://insbay.sigma-solutions.vn/ano/clothes"
+    const val BASE_URL_CLOTIFY = "http://insbay.sigma-solutions.vn/clothes"
+    const val BASE_URL_CLOTIFY_NMU = "http://insbay.sigma-solutions.vn/nmu/clothes"
+    const val BASE_URL_SEARCH_ANO = "http://insbay.sigma-solutions.vn/ano/search"
+    const val BASE_URL_SEARCH_NMU = "http://insbay.sigma-solutions.vn/nmu/search"
+    const val BASE_URL_SEARCH = "http://insbay.sigma-solutions.vn/search"
+    const val BASE_URL_ACCOUNT_NMU = "http://insbay.sigma-solutions.vn/nmu/users"
+    const val BASE_URL_ACCOUNT = "http://insbay.sigma-solutions.vn/users/"
+    const val BASE_URL_ACCOUNT_ANO = "http://insbay.sigma-solutions.vn/ano/users"
+    const val BASE_URL_FEED_ANO = "http://insbay.sigma-solutions.vn/ano/feed"
+    const val BASE_URL_FEED = "http://insbay.sigma-solutions.vn/feed"
+    const val BASE_URL_FEED_NMU = "http://insbay.sigma-solutions.vn/nmu/feed"
+    const val BASE_URL_COMMENT = "http://insbay.sigma-solutions.vn/comments"
+    const val BASE_URL_COMMENT_ANO = "http://insbay.sigma-solutions.vn/ano/comments"
+    const val BASE_URL_COMMENT_NMU = "http://insbay.sigma-solutions.vn/nmu/comments"
+
+    //url when user login
+    const val BASE_URL_FILES = "http://insbay.sigma-solutions.vn/nmu/files"
+    const val BASE_URL_ORDER = "http://insbay.sigma-solutions.vn/orders/api/v1/orders"
+    const val BASE_URL_ORDER_RATING = "https://api.insbay.app/orders/api/v1/rating"
+//    public static final String BASE_URL_ACCOUNT = "https://api.insbay.app/users"
+}
+
+
+

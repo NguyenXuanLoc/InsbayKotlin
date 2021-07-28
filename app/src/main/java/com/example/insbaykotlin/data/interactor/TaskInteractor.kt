@@ -1,15 +1,13 @@
-package com.example.task.data.interactor
+package com.example.insbaykotlin.data.interactor
 
 import com.example.insbaykotlin.data.interactor.BaseInteractor
 import com.example.task.common.Api
-import com.example.task.data.mapper.convertToModel
-import com.example.task.data.mapper.convertToModels
 import com.example.task.data.model.*
 import io.reactivex.Single
 
 class TaskInteractor : BaseInteractor() {
 
-    fun login(ob: AccountModel): Single<InfoModel>? {
+  /*  fun login(ob: AccountModel): Single<InfoModel>? {
         var param = HashMap<String, String>()
         param["grant_type"] = "login"
         param["username"] = "0${ob.phone.toString()}"
@@ -75,5 +73,5 @@ class TaskInteractor : BaseInteractor() {
         param[Api.CHANNEL] = channel
         param[Api.APP_CODE] = appCode
         return service.logAction(param).map { it.convertToModel() }
-    }
+    }*/
 }
