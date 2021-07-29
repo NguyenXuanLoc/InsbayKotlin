@@ -50,6 +50,7 @@ object Api {
 
 
     const val GET_ANONYMOUS_TOKEN = "users/api/v2/users/anonymous_token"
+    const val SEARCH_PRODUCT = "search/api/v1/search/clothes"
 
 }
 
@@ -63,6 +64,7 @@ object Key {
 
 object Env {
     const val BASE_URL_PUBLIC = "http://insbay.sigma-solutions.vn/pub/"
+    const val BASE_URL_ANO = "http://insbay.sigma-solutions.vn/"
 
 
     const val GCM_PROJECT_ID = "417654659308"

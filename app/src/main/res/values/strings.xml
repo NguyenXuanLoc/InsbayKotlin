@@ -1,3 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">InsbayKotlin</string>
+    <string name="app_name_upper">insbay</string>
+
+    <string name="cancel">anuluj</string>
+    <string name="done">gotowe</string>
+    <string name="apply">zastosuj</string>
+    <string name="next">dalej</string>
+
+
+    <string name="app_id">1270081783328208</string>
+
+    <string name="scr_welcome_hint_email">email</string>
+    <string name="scr_welcome_hint_name">imię</string>
+    <string name="scr_welcome_hint_sur_name">nazwisko</string>
+    <string name="scr_welcome_hint_pw">hasło</string>
+    <string name="scr_welcome_remind">zapomniałeś hasła?</string>
+    <string name="scr_welcome_login_facebook">zaloguj przy pomocy facebooka</string>
+    <string name="scr_welcome_regiter">rejestracja</string>
+
+    <string name="scr_register_tut">zarejestruj</string>
+    <string name="scr_register_re_enter">powtórz hasło</string>
+    <string name="scr_register_policy">tworząc konto akceptujesz &lt;a href=&quot;clotify.llc://android.intent.action.view&quot;&gt;politykę prywatności&lt;/a&gt; i &lt;a href=&quot;clotify.llc.term://android.intent.action.view&quot;&gt;regulamin&lt;/a&gt;</string>
+
+    <string name="scr_policy_title">polityka prywatności</string>
+
+    <string name="scr_conditions_title">regulamin</string>
+    <string name="scr_policy_accept_button">zaakceptuj</string>
+
+    <string name="scr_reset_pw_title">resetuj hasło</string>
+
+    <string name="scr_confirm_pw_tut">proszę wybrać nowe hasło</string>
+    <string name="scr_confirm_pw_new_pw">nowe hasło</string>
+
+    <string name="scr_account_followers">obserwujących</string>
+    <string name="scr_account_followers1">obserwujący</string>
+    <string name="scr_account_followings">obserwowanych</string>
+
+    <string name="scr_options_logout">wyloguj</string>
+    <string name="scr_options_policy">polityka prywatności</string>
+    <string name="scr_options_about">o insbay</string>
+    <string name="scr_options_account">konto</string>
+    <string name="scr_options_edit_profile">edytuj profil</string>
+    <string name="scr_options_change_password">zmień hasło</string>
+    <string name="scr_options_premium">프리미엄 계정</string>
+    <string name="scr_options_social_network">sieć społecznościowa</string>
+    <string name="scr_options_fb_connect">połącz z facebookiem</string>
+    <string name="scr_options_fb_disconnect">rozłącz z facebookiem</string>
+
+    <string name="clear_all">wyczyść wszystko</string>
+    <string name="more_to_come">więcej wkrótce</string>
+
+    <string name="confirm_delete">czy na pewno chcesz usunąć zaznaczony element?</string>
+
+    <string name="category">kategoria</string>
+    <string name="size">rozmiar</string>
+
+    <string name="loading">wczytuję&#8230;</string>
+
+    <string name="activity_text_format_comment">%s skomentowała twój post.</string>
+    <string name="activity_text_format_like">%s lubi twój post.</string>
+
+
+    <string name="activity_text_format_comment_other_people" formatted="false">%s i %d inna komentował w twój post.</string>
+
+    <string name="profile_email_hint">email</string>
+    <string name="profile_gender_hint">wybierz płeć</string>
+    <string name="current_password">obecne hasło</string>
+    <string name="new_password">nowe hasło</string>
+    <string name="retype_password">powtórz hasło</string>
+
+    <string name="sending">wysyłanie&#8230;</string>
+    <string name="failed">niepowodzenie</string>
+
+    <string name="title_screen_activity">powiadomienia</string>
+    <string name="title_screen_list_rate">평점</string>
+    <string name="fill_password_warning">podaj hasło</string>
+    <string name="fill_email_warning">podaj adres email</string>
+    <string name="hour_ago">"h temu"</string>
+    <string name="hours_ago" formatted="false">"h temu"</string>
+    <string name="minutes_ago">" minut temu"</string>
+
+    /** 25/01/2015 **/
+    <string name="POSTS">posty</string>
+    <string name="OUTFITS">kolaże</string>
+    <string name="COLLAGE">kolaże</string>
+    <string name="ITEMS">produkty</string>
+
+    <string name="delete_this_outfit">usuń inspirację</string>
+    <string name="edit_this_outfit">edytuj inspiracje</string>
+    <string name="unpublish_this_outfit">ukryj ten look</string>
+
+    <string name="delete_this_look">usuń kolaż</string>
+    <string name="edit_this_look">edytuj kolaż</string>
+    <string name="unpublish_this_look">ukryj ten kolaż</string>
+    <string name="processing">w toku&#8230;</string>
+    <string name="text_remove_bg">usuń tapetę</string>
+    <string name="text_unremove_bg">przywróć tło</string>
+    <string name="report_spam">zgłoś post</string>
+    <string name="report_sent">twoje zgłoszenie zostało wysłane</string>
+    <string name="just_now">właśnie teraz</string>
+
+    <string name="UNBLOCK">odblokuj</string>
+    <string name="BLOCK">zablokuj</string>
+
+    <string name="edit_comment">edytuj komentarz</string>
+    <string name="delete_comment">usuń komentarz</string>
+    <string name="block_user">zablokuj użytkownika</string>
+
+    <string name="enter_brandname">wpisz nazwę marki</string>
+
+    <!--guide-->
+    <!--end guide-->
+
+    <!--end sale dialog-->
+
+    <string name="chat_history">historia czatu</string>
+    <string name="message_here">wiadomość</string>
+    <string name="who_is_typing">%1$s pisze&#8230;</string>
+    <string name="activity_text_format_chat">masz nową wiadomość od użytkownika %s</string>
+    <string name="your_cloth_has_been_added">twoje produkt zostało dodane pomyślnie</string>
+    <string name="publish_cloth_message">czy chcesz opublikować produkt?</string>
+    <string name="unpublish_cloth_message">czy nie chcesz cofnąć publikacji produktu?</string>
+    <string name="publish_look_message">czy chcesz opublikować inspirację?</string>
+    <string name="unpublish_look_message">czy nie chcesz cofnąć publikacji inspiracji?</string>
+    <string name="publish_collage_message">czy chcesz opublikować inspirację?</string>
+    <string name="unpublish_collage_message">czy nie chcesz cofnąć publikacji kolażu?</string>
+    <string name="force_update_app_message">twoja aplikacja wymaga aktualizacji. zaktualizuj aplikację do najnowszej wersji.</string>
+    <string name="edit_collage">edytuj kolaż</string>
+    <string name="create_look">dodaj inspirację</string>
+    <string name="create_collage">dodaj kolaż</string>
+
+    <!--sprint 2-->
+    <string name="collage_detail">dodaj kolaż</string>
+    <string name="added_item">oznaczone produkty</string>
+    <string name="added_item_2">dodano produkty</string>
+    <string name="settings">ustawienia</string>
+    <string name="share_social">dodaj do mediów społecznościowych</string>
+    <string name="look_detail">dodaj inspirację</string>
+
+    <!--sprint 3-->
+    <string name="looks">inspiracje</string>
+
+    <string name="could_not_load_data">nie można pobrać danych</string>
+    <string name="take_photos">rób zdjęcia</string>
+    <string name="allow_access_camera">zezwalaj na dostęp do aparatu, aby rozpocząć robienie zdjęć za pomocą aplikacji</string>
+
+    <!--sprint 7-->
+    <string name="buy_from_all">kupuj od wszystkich</string>
+    <string name="buy_from_friend">kup od znajomych</string>
+    <string name="filter">filtr</string>
+    <string name="filter_detail">szczegóły filtru</string>
+    <string name="today">dzisiaj</string>
+    <string name="start_conversation">kliknij w koszyk\nby rozpocząć zakupy</string>
+
+    <item name="id_tag_price" type="id" />
+    <item name="id_tag_currency" type="id" />
+    <item name="id_order" type="id" />
+    <item name="id_change_offer" type="id" />
+
+    <string name="detail_cat_brand_size">%1$s %2$s / %3$s</string>
+
+    <string name="need_login">zaloguj się, żeby wykonać to działanie.</string>
+    <string name="error_network">błąd sieci.</string>
+    <string name="txt_unicode">\u00a9</string>
+
+
+    <!-- ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+
+
+    <string name="scr_welcome_clotify">witamy w aplikacji insbay</string>
+    <string name="CANCEL">anuluj</string>
+    <string name="look">inspiracje</string>
+    <string name="scr_remind_confirm">potwierdź</string>
+    <string name="scr_add_cloth_title">dodaj produkt</string>
+    <string name="add_image">dodaj zdjęcie</string>
+    <string name="drag_to_change_cloth_1_line">przeciągnij produkt\naby zmienić zdjęcie główne</string>
+    <string name="drag_to_delete_cloth">przeciągnij i umieść produkt w koszu aby usunąć</string>
+    <string name="details_title">dodaj produkt</string>
+    <string name="details">atrybuty</string>
+    <string name="images">zdjęcia</string>
+    <string name="scr_options_title">ustawienia</string>
+    <string name="item_status"> status produktów</string>
+    <string name="sell_item">sprzedaj produkt</string>
+    <string name="sell_status">status</string>
+    <string name="my_price">moja cena</string>
+    <string name="exchange_action">wymiana</string>
+    <string name="free_action">za darmo</string>
+    <string name="sold">sprzedane</string>
+    <string name="txt_start_chat">kup</string>
+    <string name="edit">edytuj</string>
+    <string name="change_cover_title">zmień zdjęcie profilowe</string>
+    <string name="txt_likes">polubień</string>
+    <string name="txt_comments">komentarzy</string>
+    <string name="clothes">produkty</string>
+    <string name="make_private">nie publikuj</string>
+    <string name="make_public">opublikuj</string>
+    <string name="scr_register_hint_email">e-mail</string>
+    <string name="save">zachowaj</string>
+    <string name="futher">następny</string>
+    <string name="share_my_look_next">zakończ tagowanie stylizacji</string>
+    <string name="font_roboto_light">light</string>
+    <string name="font_roboto_bold">bold</string>
+    <string name="font_roboto_regular">regular</string>
+    <string name="font_roboto_medium">medium</string>
+
+    <string name="scr_welcome_tut">bardzo nam miło cię gościć. zaloguj się, aby odkrywać świat inspiracji insbay.</string>
+    <string name="scr_welcome_login">zaloguj</string>
+    <string name="scr_remind_tut">wpisz swój email w tym miejscu, aby otrzymać instrukcje dotyczące zresetowania hasła</string>
+    <string name="scr_remind_title">resetuj hasło</string>
+    <string name="scr_register_create">zarejestruj</string>
+    <string name="mismatch_pwd">hasła nie są identyczne</string>
+    <string name="scr_register_choose_pass">stwórz hasło</string>
+    <string name="scr_policy_content">lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. at vero eoset accusam et justoduo dolores et ea stet clita kasd gubergren, no sea takimata sanctus est lorem ipsum dolor sit amet. lorem ipsum dolor sip amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. at vero et accusam et justo duo dolores et ea re. stet clita kasd gubergren, no sea takimata sanctus est lorem ipsum dolor sit amet. lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, set diam voluptua. at vero et accusam et justo duo dolores et ea rebum. stet clita kasd gubergren, no sea takimata</string>
+    <string name="scr_conditions_content">lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. at vero eoset accusam et justoduo dolores et ea stet clita kasd gubergren,no sea takimata sanctus est lorem ipsum dolor sit amet. lorem ipsum dolor sip amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. at vero et accusam et justo duo dolores et ea re.stet clita kasd gubergren, no sea takimata sanctus est lorem ipsum dolor sit amet. lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, set diam voluptua. at vero et accusam etjusto duo dolores et ea rebum. stet clita kasd gubergren, no sea takimata</string>
+    <string name="scr_reset_pw_tut">wpisz swój email oraz otrzymany w mejlu kod. następnie wybierz nowe hasło dostępu</string>
+    <string name="scr_reset_pw_reset_token">wpisz token</string>
+    <string name="scr_reset_pw_next">dalej</string>
+    <string name="scr_confirm_pw_new_pw_re_enter">powtórz hasło</string>
+    <string name="scr_confirm_pw_confirm">zatwierdź</string>
+    <string name="upload_file_error">pojawił się problem podczas dodawania zdjęcia. spróbuj ponownie.</string>
+    <string name="scr_account_followings1">obserwowany</string>
+    <string name="scr_followings_title">obserwowani</string>
+    <string name="scr_followers_title">obserwujący</string>
+    <string name="scr_options_info">informacja</string>
+    <string name="scr_publish_cloth_share_result">opublikowano</string>
+    <string name="select">wybierz</string>
+    <string name="select_cloth_filter">wybierz filtr</string>
+    <string name="button_send">ok</string>
+    <string name="add_comment_here">dodaj komentarz</string>
+    <string name="title_activity_image_filter">użyte filtry</string>
+    <string name="title_activity_tag">dodane tagi</string>
+    <string name="ok">ok</string>
+    <string name="network_error_toast">błąd. proszę spróbować jeszcze raz.</string>
+    <string name="enter_search_people_hint">wpisz nazwę użytkownika</string>
+    <string name="activity_text_format_follow">%s obserwuje cię</string>
+    <string name="activity_text_format_mention">%s wspomina o tobie w komentarzu</string>
+    <string name="activity_text_format_fb_friend">%s twój znajomy z facebooka właśnie pojawił się na insbay. sprawdź!</string>
+    <string name="activity_text_format_new_outfits">%s opublikowano nowy zestaw</string>
+    <string name="activity_text_format_new_clothes">%s udostępnił nowe produkty</string>
+    <string name="activity_text_format_comment_friend">%s skomentował post twojego znajomego</string>
+    <string name="activity_text_format_like_friend">%s polubił post twojego znajomego</string>
+    <string name="activity_text_format_new_looks">%s opublikowano nową inspiracje</string>
+    <string name="activity_text_format_comment_female">%s skomentowała twój post</string>
+    <string name="activity_text_format_comment_friend_female">%s skomentowała post twojego znajomego</string>
+    <string name="activity_text_format_like_female">%s polubiła twój post</string>
+    <string name="activity_text_format_like_friend_female">%s polubiła post twojego znajomego</string>
+    <string name="activity_text_format_like_other_people" formatted="false">%s i %d innych osób polubiło post.</string>
+    <string name="activity_text_format_like_another_people" formatted="false">%s i inna polubił twój post.</string>
+    <string name="activity_text_format_comment_friend_other_people" formatted="false">%s oraz %d użytkownik skomentował post twojego znajomego</string>
+    <string name="activity_text_format_like_friend_other_people" formatted="false">%s oraz %d polubił post twojego znajomego</string>
+    <string name="scr_edit_profile">edytuj profil</string>
+    <string name="profile_name_hint">imię</string>
+    <string name="profile_surname_hint">nazwisko</string>
+    <string name="title_activity_change_password">zmień hasło</string>
+    <string name="no_data">nie znaleziono</string>
+    <string name="publish_fb_error">publikacja na fb nieudana, proszę spróbować ponownie</string>
+    <string name="publish_tw_error">publikacja na tw nieudana, proszę spróbować ponownie</string>
+    <string name="login_fb_error">logowanie do facebooka nieudane, spróbuj jeszcze raz</string>
+    <string-array name="change_avatar_array">
+        <item>usuń awatar</item>
+        <item>zaktualizuj z fb</item>
+        <item>wybierz z galerii</item>
+        <item>zrób zdjęcie</item>
+    </string-array>
+    <string name="change_avatar_title">zmień awatar</string>
+    <string name="change_gender_title">wybierz płeć</string>
+    <string name="select_size_info">wybierz rozmiar</string>
+    <string name="change_pass_success">hasło zostało zmienione</string>
+    <string name="confirm_logout">napewno chcesz sie wylogować?</string>
+    <string name="pre_notice_length_pw">długość hasła musi być większa niż </string>
+    <string name="pre_notice_length_name">nazwa użytkownika musi być dłuższa niż </string>
+    <string name="mid_notice_length_name">" znaków (to ma "</string>
+    <string name="suffix_notice_length_name">).</string>
+    <string name="pre_notice_length_surname">upewnij się, że nazwisko ma co najwyżej </string>
+    <string name="offline_msg">jesteś offline. sprawdź swoje połączenie z internetem!</string>
+    <string name="feed_new_stories">nowe feeds</string>
+    <string name="delete">usuń</string>
+    <string name="resend">powtórz wysyłanie</string>
+    <string name="text_confirm_resend_comment">nieudana próba zamieszczenia komantarza. chcesz powtórzyć czy anulować operacje?</string>
+    <string-array name="list_filter_name">
+        <item>normalny</item>
+        <item>aimei</item>
+        <item>błękitny</item>
+        <item>jasnożółty</item>
+        <item>retro</item>
+        <item>high energy</item>
+        <item>nostalgia</item>
+        <item>film</item>
+        <item>lovely</item>
+        <item>lomo</item>
+        <item>moren</item>
+        <item>heart warm</item>
+        <item>fresh</item>
+        <item>rixi</item>
+        <item>warm</item>
+        <item>tone cuver</item>
+    </string-array>
+    <string name="title_activity_likes">osoby, które to lubią</string>
+    <string name="be_the_first_person_to_like_this">zostań pierwszą osobą która lubi to!</string>
+    <string name="confirm_unfollow">czy na pewno nie chcesz obserwować tego użytkownika?</string>
+    <string name="title_cloth_category_screen">katalog</string>
+    <string name="fill_current_password_warning">podaj obecne hasło</string>
+    <string name="fill_retype_password_warning">podaj hasło</string>
+    <string name="fill_name_warning">podaj imię</string>
+    <string name="fill_surname_warning">podaj nazwisko</string>
+    <string name="remind_token_has_been_sent">e-mail z tokena resetowania hasła został wysłany</string>
+    <string name="select_one_photo">wybierz zdjęcie!</string>
+    <string name="yesterday_at">"wczoraj "</string>
+    <string name="minute_ago">" minutę temu"</string>
+    <string name="WARDROBE">profilu</string>
+    <string name="LOOK">inspiracje</string>
+    <string name="delete_this_cloth">usuń produkt</string>
+    <string name="edit_this_cloth">edytuj produkt</string>
+    <string name="unpublish_this_cloth">nie publikuj</string>
+    <string name="create_new_look_description_delete">kliknij na zdjęciu inspiracji, aby dodać produkty</string>
+    <string name="comment_screen_you_like_this"><![CDATA[<b>ty</b> lubisz to]]></string>
+    <string name="comment_screen_you_and_others_like_this"><![CDATA[<b>ty</b> i <b>%d innych użytkowników</b>  lubi to.]]></string>
+    <string name="comment_screen_you_and_other_like_this"><![CDATA[<b>ty</b> i <b>1 inny użytkownik</b> lubi to]]></string>
+    <string name="comment_screen_you_friend_like_this" formatted="false"><![CDATA[<b>ty</b> i <b>%s</b> lubi to]]></string>
+    <string name="comment_screen_you_friend_other_like_this" formatted="false"><![CDATA[<b>ty, %s</b> i <b>1 inny użytkownik</b> lubi to]]></string>
+    <string name="comment_screen_you_friend_others_like_this" formatted="false"><![CDATA[<b>ty, %s</b> i <b>%d innych użytkowników</b> lubi to]]></string>
+    <string name="comment_screen_friend_others_like_this" formatted="false"><![CDATA[<b>%s</b> i <b>%d innych użytkowników</b> lubi to]]></string>
+    <string name="comment_screen_friend_other_like_this" formatted="false"><![CDATA[<b>%s</b> i <b>1 inny użytkownik</b> lubi to]]></string>
+    <string name="comment_screen_2_friend_others_like_this" formatted="false"><![CDATA[<b>%s, %s</b> i <b>%d innych użytkowników</b> lubi to]]></string>
+    <string name="comment_screen_2_friend_other_like_this" formatted="false"><![CDATA[<b>%s, %s</b> i <b>1 inny użytkownik</b> lubi to]]></string>
+    <string name="comment_screen_friend_like_this" formatted="false"><![CDATA[<b>%s</b> lubi to]]></string>
+    <string name="comment_screen_2_friend_like_this" formatted="false"><![CDATA[<b>%s</b> i <b>%s</b> lubi to]]></string>
+    <string-array name="gender_options">
+        <item>mężczyzna</item>
+        <item>kobieta</item>
+        <item>inne</item>
+    </string-array>
+    <string name="fill_gender_warning">proszę wybrać swoją płeć</string>
+    <string name="do_you_want_to_publish_on_facebook">czy chcesz opublikować swój wygląd na facebook?</string>
+    <string name="your_comment">komentarz</string>
+    <string name="details_product">wprowadź opis</string>
+    <string name="report_sent_failed">przepraszamy, twoje zgłoszenie nie zostało wysłane, spróbuj ponownie</string>
+    <string name="FOLLOW">obserwuj</string>
+    <string name="UNFOLLOW">nie obserwuj</string>
+
+    <!--sale dialog-->
+    <string name="original_price">cena oryginalna</string>
+    <!--end sale dialog-->
+
+    <string name="search_hint">wprowadź tekst</string>
+    <string name="no_location_data_provided">brak danych dotyczących lokalizacji</string>
+    <string name="no_address_found">adresu nie znaleziono</string>
+    <string name="address_found">adres znaleziono</string>
+    <string name="map">mapa</string>
+    <string name="description">opis</string>
+    <string name="activity_text_format_follow_cloth">"%s zaczął obserwować twoją produkt"</string>
+    <string name="scr_unpublish_cloth_share_result">niepubliczny</string>
+    <string name="update">zaktualizuj</string>
+    <string name="check_the_price">sprawdź cenę %1$s</string>
+    <string name="check_the_price_domodi">sprawdź cenę domodi</string>
+    <string name="check_the_price_zalando">sprawdź cenę zalando</string>
+
+    <!--sprint 2-->
+    <string name="create_clothes">dodaj produkty</string>
+    <string name="txt_like_1">polubienie</string>
+    <string name="txt_like_234">polubienia</string>
+    <string name="txt_comment_1">komentarz</string>
+    <string name="txt_comment_234">komentarze</string>
+    <string name="people_and_brand">programy tv</string>
+
+    <string-array name="change_cover_array">
+        <item>usuń tę tapetę</item>
+        <item>wybierz z biblioteki zdjęć</item>
+        <item>zrób zdjęcie</item>
+    </string-array>
+
+    <!--sprint 5-->
+    <string name="sell">sprzedaj</string>
+    <string name="tag_cloth">oznaczone produkty</string>
+    <string name="tag_cloth_2">dodano produkty</string>
+    <string name="retake">ponów</string>
+    <string name="your_cloth_has_been_edited">twój kolaż został edytowany poprawnie</string>
+    <string name="item">produkty</string>
+    <string name="login_fb_msg">aby zaprosić znajomych z facebook\'a zaloguj się na swoje konto</string>
+    <string name="chat_with">czatuj z %1$s</string>
+    <string name="clear_filter">wyczyść filtry</string>
+    <string name="size_na">rozmiar: brak</string>
+    <string name="size_detail">rozmiar: %1$s</string>
+    <string name="scr_register_title">zaloguj</string>
+    <string name="txt_cloth_details">informacje szczegółowe</string>
+    <string name="txt_sell_cloth_details">informacje szczegółowe</string>
+
+    <!--sprint 7-->
+    <string name="brand_na">brak</string>
+    <string name="category_na">brak</string>
+    <string name="you">ty</string>
+    <string name="string_with_dot">%1$s:</string>
+    <string name="drag_to_change_cloth">przeciągnij produkt\naby zmienić zdjęcie główne</string>
+    <string name="na"><!--brak--></string>
+    <string name="discard">odrzuć</string>
+
+    <!-- Rating START -->
+    <string name="SELLING">sprzedawane</string>
+    <string name="send_offer">wyślij ofertę</string>
+    <string name="money_transferred">pieniądze zostały przelane na twoje konto</string>
+    <string name="action_shipment">czy przedmiot został wysłany?</string>
+    <string name="shipment_ready">twój zakup został wysłany</string>
+    <string name="action_check_shipment_info">%1$s numeru przesyłki</string>
+    <string name="rate_notification_chat">prośba o ocenę transakcji z %1$s za %2$s %3$s (%4$s)</string>
+    <string name="rate_notification_chat_no_brand_no_category">prośba o ocenę transakcji %1$s (%2$s)</string>
+    <string name="how_would_you_rate">jak oceniasz \n%1$s jako %2$s?</string>
+    <string name="continue_">kontynuuj</string>
+    <string name="close">zamknij</string>
+    <string name="message_order_create">hej, proponuję</string>
+    <string name="accept">zaakceptuj</string>
+    <string name="decline">nie przyjmuję oferty</string>
+    <string name="dear"></string>
+    <string name="decline_offer_message">z przykrością informuję, że nie akceptuję twojej oferty</string>
+    <string name="change_offer">zmień ofertę</string>
+    <string name="accept_offer_message">akceptuję twoją ofertę</string>
+    <string name="continue_ordering">kontynuuj zamówienie</string>
+    <string name="rejected_message">płatność nie powiodła się</string>
+    <string name="question_cancel_offer">czy na pewno chcesz anulować ofertę %1$s?</string>
+    <string name="question_accept_offer">czy na pewno chcesz zaakceptować ofertę %1$s?</string>
+    <string name="positive_answer">tak</string>
+    <string name="negative_answer">nie</string>
+    <string name="shipment_estimate_time">szacowany czas dostarczenia przesyłki</string>
+    <string name="tracking">numer przesyłki</string>
+    <string name="hint_shipment_estimate">dd/mm/rrrr</string>
+    <string name="hint_tracking">np. ch99123456</string>
+    <string name="send">wyślij</string>
+    <string name="leave_feedback">zostaw komentarz dla %1$s jako %2$s</string>
+    <string name="alert_estimate_time_empty">proszę podać przewidywany czas</string>
+    <string name="alert_tracking_number_empty">proszę podać numer przesyłki</string>
+    <string name="seller">sprzedawcę</string>
+    <string name="buyer">kupującego</string>
+    <string name="alert_price_offer_zero">oferta musi być większa niż 0 pln</string>
+    <string name="alert_price_too_large">cena nie może być większa niż %1$s</string>
+    <string name="you_lower_case">ty</string>
+    <string name="error_server">server error</string>
+    <string name="order_paymented">order is paymented.</string>
+    <string name="refresh">refresh</string>
+    <string name="copied_to_clipboard">copied to clipboard</string>
+
+    <string name="buyer_upper">kupujący </string>
+    <string name="pending">oczekujące</string>
+    <string name="hint_feedback">wpisz swój komentarz</string>
+    <string name="message_pay">prosimy o wpłatę %1$s\ndla %2$s za\n%3$s</string>
+    <string name="message_pay_no_branch">prosimy o wpłatę %1$s\ndla %2$s</string>
+    <string name="continue_wepay">kontynuuj płatność za pomocą <b>dotpay</b></string>
+    <string name="dotpay_regulation">insbay używa do płatności systemu dotpay.\ntwój przelew dla %1$s zostanie zrealizowany bespośrednio przez system dotpay.</string>
+    <string name="who_comment_transaction">%1$s dodała komentarz do transakcji</string>
+
+    <string name="detail_header_rate">%1$s ocenił transakcję %4$s %5$s na %3$s wieszaki</string>
+    <string name="detail_header_rate_1">%1$s ocenił transakcję %4$s %5$s na %3$s wieszak</string>
+    <string name="detail_header_rate_5">%1$s ocenił transakcję %4$s %5$s na %3$s wieszaków</string>
+    <string name="detail_header_rate_no_brand_no_category">%1$s ocenił transakcję na %3$s wieszaki</string>
+    <string name="detail_header_rate_no_brand_no_category_1">%1$s ocenił transakcję na %3$s wieszak</string>
+    <string name="detail_header_rate_no_brand_no_category_5">%1$s ocenił transakcję na %3$s wieszaków</string>
+
+    <string name="who_receive_rate">otrzymałeś %1$s wieszaki od %2$s za %3$s %4$s (%5$s)</string>
+    <string name="who_receive_rate_1">otrzymałeś %1$s wieszak od %2$s za %3$s %4$s (%5$s)</string>
+    <string name="who_receive_rate_5">otrzymałeś %1$s wieszaków od %2$s za %3$s %4$s (%5$s)</string>
+    <string name="who_receive_rate_no_branch">otrzymałeś %1$s wieszaki od %2$s (%3$s)</string>
+    <string name="who_receive_rate_no_branch_1">otrzymałeś %1$s wieszak od %2$s (%3$s)</string>
+    <string name="who_receive_rate_no_branch_5">otrzymałeś %1$s wieszaków od %2$s (%3$s)</string>
+
+    <string name="activity_text_format_rate">otrzymałeś %1$s wieszaki od %2$s</string>
+    <string name="activity_text_format_rate_1">otrzymałeś %1$s wieszak od %2$s</string>
+    <string name="activity_text_format_rate_5">otrzymałeś %1$s wieszaków od %2$s</string>
+    <!-- rating end -->
+
+    <!--not translate-->
+    <!--sprint 3-->
+    <string name="no_result">nie znaleziono wyników dla \"%1$s\"</string>
+    <string name="no_result_default">brak wyników</string>
+    <string name="login_fb">proszę się zalogować do facebook\'a …</string>
+    <string name="login_tw">proszę się zalogować do twitter\'a …</string>
+    <string name="publishing">publikowanie …</string>
+    <string name="login_tw_error">błąd logowania, proszę spróbować ponownie</string>
+    <string name="login_pinterest_error">błąd logowania, proszę spróbować ponownie</string>
+    <string name="publish_pinterest_error">błąd udostępniania, proszę spróbować ponownie</string>
+    <string name="default_note_pinterest">nowy kolaż</string>
+    <string name="add_look">utwórz inspiracje</string>
+
+    <!--sprint 6-->
+    <string name="limit_images">nie możesz dołączyć więcej niż 7 zdjęć</string>
+    <string name="need_at_least_1_photo">musisz dołączyć przynajmniej jedno zdjęcie</string>
+    <string name="publish_this_cloth">publikuj produkt</string>
+    <string name="publish_this_look">opublikuj kolaż</string>
+    <string name="publish_this_outfit">opublikuj inspiracje</string>
+    <string name="gps_message">lokalizacja jest wyłączone. czy włączyć usługę?</string>
+    <string name="retry">retry</string>
+    <string name="accept_permission">wszystkie uprawnienia muszą być włączone</string>
+
+    <string name="open_app_info">1. otwórz ustawienia swojego urządzenia</string>
+    <string name="go_to_permission">2. idź do prywatności</string>
+    <string name="activate_camera">3. idź do aparatu</string>
+    <string name="activate_camera_4">4. aktywuj</string>
+    <string name="yesterday">wczoraj</string>
+    <string name="added_to_wardrobe">produkt dodany</string>
+    <string name="need_instagram">brak zainstalowanej aplikacji instagram. proszę zainstalować aplikację i spróbować ponownie.</string>
+    <string name="need_facebook">brak zainstalowanej aplikacji facebook. proszę zainstalować aplikację i spróbować ponownie.</string>
+    <string name="your_item_has_been_edited">twój przedmiot został poprawiony</string>
+    <string name="profile_bank_name_hint">nazwa banku</string>
+    <string name="profile_card_number_hint">numer konta</string>
+    <string name="profile_account_name">nazwa użytkownika konta</string>
+    <string name="bank_info">informacje o banku</string>
+    <string name="dialog_update_bank_info">proszę uzupełnić informacje o numerze konta bankowego na stronie profilu użytkownika.</string>
+    <string name="dialog_missing_bank_info">proszę wprowadzić informacje o banku.</string>
+    <string name="change_address">zmień adres</string>
+    <string name="change_address_request">czy chcesz wysłać przedmiot na podany adres?</string>
+    <string name="please_add_address">proszę wprowadzić adres na jaki przesyłka ma zostać wysłana.</string>
+    <string name="label_please_add_your_addr">proszę wprowadzić adres na jaki przesyłka ma zostać wysłana:</string>
+    <string name="remember_this_addr">zapamiętaj ten adres</string>
+    <string name="type_your_address_here">wpisz swój adres</string>
+    <string name="shipping_address">adres do wysyłki: %1$s</string>
+    <string name="who_receive_rate_from">otrzymałeś ocenę od %1$s</string>
+
+
+    <string name="not_allow_by_state">nie możesz zmienić oferty na tym etapie</string>
+    <string name="not_avaiable_anymore">przedmiot nie jest już dostępny</string>
+    <string name="item_not_found">item doesn\'t exist</string>
+    <string name="order_not_found">order not found</string>
+    <string name="not_allow_to_accept">czynność niedozwolona. oferta została już zaakceptowana/odrzucona/zamówiona.</string>
+    <string name="not_latest_offer">czynność niedozwolona. oferta została już zaakceptowana/odrzucona/zamówiona.</string>
+    <string name="accept_for_other_transaction">czynność niedozwolona. oferta została już zaakceptowana/odrzucona/zamówiona.</string>
+    <string name="decline_the_latest_only">czynność niedozwolona. oferta została już zaakceptowana/odrzucona/zamówiona.</string>
+    <string name="dialog_wrong_bank_number">błędny numer konta bankowego. proszę wprowadzić nuner konta składający się z 26 cyfr.</string>
+    <string name="none">brak</string>
+
+    <string name="alert_tracking_number_wrong_format">błędny format numeru przesyłki</string>
+    <string name="RATE_BLIND">oceny</string>
+
+    <string name="scr_options_premium_desc">kup wersję premium bez reklam!\n\cena: 4pln\n\njeśli posiadasz już konto premium, zostanie ono przywrócone bez pobrania dodatkowej opłaty.</string>
+    <string name="premium_restored">płatność udana.</string>
+    <string name="premium_done">płatność udana.</string>
+    <string name="pay_for_premium">zarejestruj konto premium</string>
+    <string name="payment_failed">płatność nieudana</string>
+    <string name="need_sign_in_google">płatność nieudana. proszę zalogować się do konta google.</string>
+    <string name="cannot_load_data">nie mozna pobrać danych.</string>
+
+    <string name="error_network_search">serwer nie odpowiada, prosimy spróbować ponownie</string>
+    <string name="invalid_email">nieprawidłowy email</string>
+    <string name="top_logo">najlepsze inspiracje</string>
+    <string name="no_internet_message">brak połączenia z internetem</string>
+    <string name="notify_request_time_out">brak połączenia z internetem</string>
+    <string name="not_internet_connection">brak połączenia z internetem</string>
+    <string name="notify_new_feeds">nowe posty</string>
+    <string name="app_name">Insbay</string>
 </resources>

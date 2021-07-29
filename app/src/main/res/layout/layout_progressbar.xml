@@ -6,12 +6,12 @@
     android:gravity="center"
     android:orientation="horizontal">
 
-    <com.example.insbaykotlin.progressbar.ProgressWheel
+  <!--  <com.example.insbaykotlin.progressbar.ProgressWheel
         android:id="@+id/pb"
         android:layout_width="@dimen/dimen_progressbar"
         android:layout_height="@dimen/dimen_progressbar"
         wheel:matProg_barColor="@color/colorPrimary"
-        wheel:matProg_progressIndeterminate="true" />
+        wheel:matProg_progressIndeterminate="true" />-->
 
     <TextView
         android:id="@+id/lblMsg"

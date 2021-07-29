@@ -102,7 +102,7 @@ abstract class BaseActivity<V : BaseView, P : BasePresenterImp<V>> : AppCompatAc
         background: Int? = null,
         removeElevation: Boolean = false
     ) {
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         background?.run {
             toolbar.setBackgroundColor(ContextCompat.getColor(ctx, background))

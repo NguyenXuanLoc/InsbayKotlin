@@ -62,4 +62,98 @@
     <dimen name="min_width_dialog">300dp</dimen>
     <dimen name="divider">1dp</dimen>
     <dimen name="border">2dp</dimen>
+
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="spacing_tiny">5dp</dimen>
+    <dimen name="spacing_small">15dp</dimen>
+    <dimen name="spacing_medium">20dp</dimen>
+    <dimen name="spacing_large">25dp</dimen>
+    <dimen name="spacing_normal">10dp</dimen>
+
+    <dimen name="actionbar_height">45dp</dimen>
+    <dimen name="actionbar_padding">12dp</dimen>
+
+    <dimen name="activity_remind_password_padding_tvTut">12dp</dimen>
+
+    <dimen name="loading_process_width">30dp</dimen>
+
+    <dimen name="padding_image_frame_full">8dp</dimen>
+    <dimen name="padding_image_frame_full_half">6dp</dimen>
+    <dimen name="padding_image_frame_half">4dp</dimen>
+    <dimen name="padding_image_frame_half_x2">2dp</dimen>
+
+    <dimen name="size_avatar_small">30dp</dimen>
+    <dimen name="size_avatar">50dp</dimen>
+    <dimen name="size_avatar_big">80dp</dimen>
+
+    <dimen name="margin_list_photo">10dp</dimen>
+    <dimen name="icon_selected_cloth_size">25dp</dimen>
+
+    <dimen name="button_search_width">44dp</dimen>
+    <dimen name="button_search_height">33dp</dimen>
+
+    <dimen name="image_filter_height">110dp</dimen>
+    <dimen name="image_filter_item_margin">10dp</dimen>
+
+    <dimen name="tag_cloth_height">75dp</dimen>
+    <dimen name="tag_cloth_item_size">56dp</dimen>
+
+    <dimen name="tag_screen_button_right_width">70dp</dimen>
+    <dimen name="activity_image_size">50dp</dimen>
+
+    <dimen name="header_home_height">100dp</dimen>
+    <dimen name="header_account_height">180dp</dimen>
+    <dimen name="header_account_translation_y">142dp</dimen>
+    <dimen name="account_wardrobe_header_button_size">38dp</dimen>
+
+    <dimen name="loading_view_progress_size">50dp</dimen>
+    <dimen name="loading_view_margin_right">5dp</dimen>
+
+    <dimen name="icon_profile_size">30dp</dimen>
+    <dimen name="icon_marker_width">50dp</dimen>
+    <dimen name="icon_marker_height">50dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="processing_text_size">12sp</dimen>
+    <dimen name="processing_text_margin">5dp</dimen>
+    <dimen name="processing_text_radius">2dp</dimen>
+
+    <dimen name="secondhand_avatar_size">35dp</dimen>
+    <dimen name="margin_blank_chat_item">75dp</dimen>
+    <dimen name="tablayout_indicator_height">3dp</dimen>
+    <dimen name="btn_publish_add_cloth">120dp</dimen>
+
+    <dimen name="fontsize_tiny">12sp</dimen>
+    <dimen name="fontsize_small">14sp</dimen>
+    <dimen name="fontsize_medium">16sp</dimen>
+    <dimen name="fontsize_large">18sp</dimen>
+
+    <dimen name="acc_info_area">240dp</dimen>
+    <dimen name="avatar_size">65dp</dimen>
+
+
+    <dimen name="bottom_bar_min_heigh">40dp</dimen>
+    <dimen name="spacing_minus_normal">-10dp</dimen>
+    <dimen name="spacing_minus_large">-25dp</dimen>
+    <dimen name="spacing_cloth_image">300dp</dimen>
+    <dimen name="cloth_icon_size">15dp</dimen>
+    <dimen name="cloth_parent_icon_size">27dp</dimen>
+
+    <dimen name="icon_tab_bar">24dp</dimen>
+
+    <!--new requirement order-->
+    <dimen name="fontsize_question">18sp</dimen>
+    <dimen name="fontsize_btn_action">20sp</dimen>
+    <dimen name="fontsize_ship_text">17sp</dimen>
+    <dimen name="padding_btn_action_top_bottom">15dp</dimen>
+    <dimen name="padding_btn_left">60dp</dimen>
+    <dimen name="padding_btn_right">60dp</dimen>
+    <!--dimen background send offer-->
+    <dimen name="width_height_icon">17dp</dimen>
+    <dimen name="width_ic_plus">48dp</dimen>
+    <dimen name="size_text_offer">16dp</dimen>
+    <dimen name="margin_right_plus">15dp</dimen>
+    <dimen name="width_rate_number">22dp</dimen>
+    <dimen name="height_rate_number">20dp</dimen>
+
 </resources>

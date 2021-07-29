@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background">
+        <bitmap
+            android:src="@drawable/coat_hanger_normal_black"
+            />
+    </item>
+    <item android:id="@android:id/secondaryProgress">
+        <bitmap android:src="@drawable/coat_hanger_normal_blue_selected" />
+    </item>
+    <item android:id="@android:id/progress">
+        <bitmap
+            android:src="@drawable/coat_hanger_normal_blue_selected"
+            />
+    </item>
+</layer-list>

@@ -3,7 +3,7 @@ package com.example.pview.ui.base
 import android.content.Context
 import com.example.task.ui.base.BaseView
 import io.reactivex.disposables.CompositeDisposable
-import vn.vano.vicall.widget.progressbar.MyProgressDialog
+import com.example.insbaykotlin.progressbar.MyProgressDialog
 
 open class BasePresenterImp<T : BaseView>(private val context: Context) : BasePresenter<T>() {
     private val progressDialog: MyProgressDialog by lazy { MyProgressDialog(context) }

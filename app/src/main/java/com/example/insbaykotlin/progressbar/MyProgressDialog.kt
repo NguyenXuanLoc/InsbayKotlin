@@ -1,4 +1,4 @@
-package vn.vano.vicall.widget.progressbar
+package com.example.insbaykotlin.progressbar
 
 import android.app.Dialog
 import android.content.Context

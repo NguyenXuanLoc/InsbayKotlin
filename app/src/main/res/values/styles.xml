@@ -1,77 +1,376 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
-        <!-- Customize your theme here. -->
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+        <item name="android:textAppearanceButton">@style/MyButton</item>
+        <item name="android:windowEnableSplitTouch">false</item>
+        <item name="android:splitMotionEvents">false</item>
+        <item name="android:textAppearanceLargePopupMenu">@style/myPopupMenuTextAppearanceLarge
+        </item>
+        <item name="android:textAppearanceSmallPopupMenu">@style/myPopupMenuTextAppearanceSmall
+        </item>
+        <item name="android:textColor">@color/gray_default_text_color</item>
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:alertDialogTheme">@style/AlertDialog</item>
+
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
-        <item name="colorAccent">@color/colorAccent</item>
-<!--        <item name="android:fontFamily">@font/roboto_regular</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+
     </style>
 
-    <!-- Toolbar -->
-    <style name="PopUpTheme" parent="@style/ThemeOverlay.MaterialComponents.Light">
-        <item name="overlapAnchor">false</item>
-    </style>
-    <style name="ToolBarStyle">
-        <item name="android:theme">@style/ThemeOverlay.MaterialComponents.Dark</item>
-        <item name="android:popupTheme">@style/PopUpTheme</item>
-        <item name="android:background">@color/colorPrimary</item>
-        <item name="android:elevation">@dimen/dimen_05x</item>
-        <item name="android:contentInsetEnd">@dimen/zero</item>
-        <item name="contentInsetEndWithActions">@dimen/zero</item>
-        <item name="android:contentInsetStart">@dimen/zero</item>
-        <item name="contentInsetStartWithNavigation">@dimen/zero</item>
-    </style>
-    <!-- End of Toolbar -->
-
-    <!-- EditText -->
-    <style name="EditText" parent="@android:style/Widget.EditText">
-        <item name="android:textColor">@color/textColorPrimary</item>
-        <item name="android:textColorHint">@color/grey</item>
-        <item name="android:textSize">@dimen/text_size_14</item>
-        <item name="android:selectAllOnFocus">true</item>
-        <item name="android:autofillHints" >@string/app_name</item>
-        <item name="android:paddingStart">@dimen/dimen_2x</item>
-        <item name="android:paddingEnd">@dimen/dimen_2x</item>
-        <item name="android:paddingTop">@dimen/dimen_x1x</item>
-        <item name="android:paddingBottom">@dimen/dimen_x1x</item>
+    <style name="MyTabLayoutTextAppearance" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
-    <style name="EditText.Regular">
-<!--        <item name="android:fontFamily">@font/roboto_regular</item>-->
-        <item name="background">@color/white</item>
+    <style name="MyButton" parent="Widget.AppCompat.Button">
+        <item name="android:textAllCaps">false</item>
     </style>
 
-    <style name="EditText.Medium">
-<!--        <item name="android:fontFamily">@font/roboto_medium</item>-->
+    <style name="styleBigButton">
+        <item name="android:background">@drawable/background_black_gray</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_small</item>
+        <item name="android:layout_marginRight">@dimen/spacing_small</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">@dimen/fontsize_medium</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
-    <style name="EditText.Bold">
-<!--        <item name="android:fontFamily">@font/roboto_bold</item>-->
+    <style name="styleBigGreenButton" parent="styleBigButton">
+        <item name="android:background">@drawable/background_green_gray</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
     </style>
-    <!-- End of EditText -->
 
+    <style name="styleBigBlackButton" parent="styleBigButton">
+        <item name="android:background">@drawable/background_black_gray</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="styleBigGrayButton" parent="styleBigButton">
+        <item name="android:background">@drawable/background_gray_dark</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="styleBigWhiteButton" parent="styleBigButton">
+        <item name="android:background">@drawable/background_white_gray</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="styleBigBlueButton" parent="styleBigButton">
+        <item name="android:background">@drawable/background_blue_gray</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">5dp</item>
+    </style>
+
+    <style name="CustomProgressDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:colorBackground">#00000000</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:textColor">#FF0000</item>
+    </style>
+
+    <style name="style_editext">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">#F7F7F7</item>
+        <item name="android:padding">@dimen/spacing_small</item>
+        <item name="android:textColorHint">@color/grey_text_empty_input_field</item>
+        <item name="android:textSize">@dimen/fontsize_small</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@string/font_roboto_regular</item>
+    </style>
+
+    <style name="feed_new_stories_button">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="android:background">@drawable/feed_new_stories_background</item>
+        <item name="android:layout_marginTop">40dip</item>
+        <item name="android:paddingLeft">22.0dip</item>
+        <item name="android:paddingRight">22.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="myPopupMenuTextAppearanceSmall" parent="@android:style/TextAppearance.DeviceDefault.Widget.PopupMenu.Small">
+        <item name="android:textColor">@color/gray_default_text_color</item>
+    </style>
+
+    <style name="myPopupMenuTextAppearanceLarge" parent="@android:style/TextAppearance.DeviceDefault.Widget.PopupMenu.Large">
+        <item name="android:textColor">@color/gray_default_text_color</item>
+    </style>
+
+    <style name="style_tittle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/fontsize_medium</item>
+        <item name="android:textColor">@color/gray_blur</item>
+    </style>
+
+    <style name="style_item">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/fontsize_small</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="style_description">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/fontsize_small</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="style_toggle_button_social">
+        <item name="android:textOff"></item>
+        <item name="android:textOn"></item>
+        <item name="android:layout_width">44dp</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="TextViewClothDetail">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/spacing_tiny</item>
+        <item name="android:layout_marginTop">@dimen/spacing_tiny</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_small</item>
+        <item name="android:layout_marginRight">@dimen/spacing_small</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+    </style>
+
+    <style name="TextViewClothDetail.Small">
+        <item name="android:textSize">@dimen/fontsize_small</item>
+    </style>
+
+    <style name="TextViewClothDetail.Medium">
+        <item name="android:textSize">@dimen/fontsize_medium</item>
+    </style>
+
+    <style name="TextViewClothDetail.Large">
+        <item name="android:textSize">@dimen/fontsize_large</item>
+    </style>
+
+    <style name="TextViewClothDetail.Small.Gray">
+        <item name="android:textColor">@color/grey_text_empty_input_field</item>
+    </style>
+
+    <style name="TextViewClothDetail.Small.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextViewClothDetail.Medium.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <!--<style name="TextViewClothDetail.Medium.Black.Bold">
+        <item name="fontType">bold</item>
+    </style>
+
+    <style name="TextViewClothDetail.Large.Black">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="TextViewClothDetail.Large.Black.Bold">
+        <item name="fontType">bold</item>
+    </style>-->
+
+    <style name="TextViewClothDetailCondition">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/fontsize_small</item>
+    </style>
+
+    <style name="BottomNavigation" parent="Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:drawablePadding">@dimen/dimen_1x</item>
+    </style>
+<!--    <style name="TextViewClothDetailCondition.Bold">
+        <item name="fontType">bold</item>
+    </style>-->
+
+    <style name="StyleDot">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginLeft">@dimen/spacing_tiny</item>
+        <item name="android:layout_marginRight">@dimen/spacing_tiny</item>
+        <item name="android:background">@drawable/bg_dot</item>
+    </style>
+
+    <style name="CameraOptionStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:paddingTop">@dimen/spacing_large</item>
+        <item name="android:paddingBottom">@dimen/spacing_large</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/fontsize_medium</item>
+        <item name="android:textColor">@color/gray_blur</item>
+    </style>
+
+    <style name="CameraOptionStyleSelected" parent="CameraOptionStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/gray_blur</item>
+    </style>
+
+    <style name="StyleTextViewSecondHand">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:lines">1</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/fontsize_small</item>
+    </style>
+
+    <style name="StyleTextViewSecondHandLine">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/fontsize_small</item>
+    </style>
+
+    <style name="CustomRatingBar" parent="Widget.AppCompat.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_ratingbar</item>
+    </style>
+
+    <style name="CustomRatingBarSmall" parent="Widget.AppCompat.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_ratingbar_small</item>
+    </style>
+
+    <style name="CustomRatingBarSmallBlue" parent="Widget.AppCompat.RatingBar">
+        <item name="android:progressDrawable">@drawable/custom_ratingbar_small_blue</item>
+    </style>
+
+    <style name="dialog_style_question">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">@dimen/fontsize_question</item>
+    </style>
+
+    <style name="dialog_style_regulation_black">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+        <item name="android:textSize">@dimen/fontsize_tiny</item>
+    </style>
+
+    <style name="dialog_style_action">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">@dimen/fontsize_btn_action</item>
+        <item name="android:paddingTop">@dimen/padding_btn_action_top_bottom</item>
+        <item name="android:paddingBottom">@dimen/padding_btn_action_top_bottom</item>
+        <item name="android:background">@drawable/sl_bg_btn_dialog_order</item>
+    </style>
+
+
+    <style name="shipment_header_text">
+        <item name="android:textSize">@dimen/fontsize_ship_text</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:layout_marginRight">40dp</item>
+    </style>
+
+    <style name="shipment_fill_edit_text">
+        <item name="android:textColorHint">@color/color_ship_hint_edit_text</item>
+        <item name="android:textColor">@color/color_ship_fill</item>
+        <item name="android:textSize">@dimen/fontsize_ship_text</item>
+        <item name="android:layout_marginRight">40dp</item>
+        <item name="android:layout_marginLeft">40dp</item>
+        <item name="android:paddingTop">@dimen/padding_btn_action_top_bottom</item>
+        <item name="android:paddingLeft">@dimen/padding_btn_action_top_bottom</item>
+        <item name="android:paddingRight">@dimen/padding_btn_action_top_bottom</item>
+        <item name="android:paddingBottom">@dimen/padding_btn_action_top_bottom</item>
+    </style>
+
+    <style name="Dialog.NoTitle" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:windowBackground">@color/color_bg_rate_screen</item>
+    </style>
+
+    <style name="ValueProgressBar" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:indeterminateOnly">false</item>
+        <item name="android:progressDrawable">@drawable/value_progress_bar</item>
+        <item name="android:minHeight">2dip</item>
+        <item name="android:maxHeight">3dip</item>
+    </style>
+
+    <!-- TextStyle-->
     <!-- Textview style -->
     <style name="TextView" parent="@android:style/Widget.TextView">
-        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/text_size_14</item>
         <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="TextView.Bold">
-<!--        <item name="android:fontFamily">@font/roboto_bold</item>-->
+        <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
 
     <style name="TextView.Medium">
-<!--        <item name="android:fontFamily">@font/roboto_medium</item>-->
+        <item name="android:fontFamily">@font/poppins_medium</item>
     </style>
 
     <style name="TextView.Regular">
-<!--        <item name="android:fontFamily">@font/roboto_regular</item>-->
+        <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
     <style name="TextView.Light">
-<!--        <item name="android:fontFamily">@font/roboto_light</item>-->
+        <item name="android:fontFamily">@font/poppins_light</item>
     </style>
 
+
+    <style name="AlertDialog" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:windowTitleStyle">@style/TitleDialog</item>
+        <item name="android:bottomLeftRadius">@dimen/dimen_14</item>
+        <item name="android:topLeftRadius">@dimen/dimen_14</item>
+        <item name="android:topRightRadius">@dimen/dimen_14</item>
+        <item name="android:bottomRightRadius">@dimen/dimen_14</item>
+        <item name="android:maxRows">1</item>
+        <!-- <item name="android:maxLines">2</item>
+         <item name="android:ellipsize">end</item>-->
+    </style>
+
+    <style name="TitleDialog" parent="TextAppearance.AppCompat.Title">
+        <item name="fontFamily">@string/font_roboto_regular</item>
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>
