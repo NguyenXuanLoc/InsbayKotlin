@@ -69,6 +69,9 @@ dependencies {
 
     // Timber - an alternative logger
     implementation "com.jakewharton.timber:timber:$timber"
+
+    implementation "com.facebook.fresco:fresco:$facebook_fresco"/*Facebook's image lib*/
+
 //    implementation "androidx.room:room-runtime:2.3.0"
 //    kapt  "androidx.room:room-compiler:2.3.0"
 }

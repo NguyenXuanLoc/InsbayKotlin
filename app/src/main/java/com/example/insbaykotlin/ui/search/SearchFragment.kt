@@ -1,5 +1,6 @@
 package com.example.insbaykotlin.ui.search
 
+import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.insbaykotlin.R
 import com.example.insbaykotlin.common.ext.ctx
@@ -13,15 +14,21 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
     private var currentPage = 0
     private var hasMoreData = true
     private var isLoading = false
+    private val looks by lazy { ArrayList<OutfitsModel>() }
+    private val lookAdapter by lazy {
+        SearchLookAdapter(looks, { it ->
+        })
+    }
     private val paginationScrollListener by lazy {
         object : PaginationScrollListener(rclLook.layoutManager as LinearLayoutManager) {
             override fun loadMoreItems() {
                 isLoading = true
                 currentPage++
                 rclLook.post {
-//                    adapter.addLoadingView()
+                    lookAdapter.addLoadingView()
                 }
-//                getContacts(false)
+                Log.e("TAG","LOAD MORE")
+                presenter.searchLook(currentPage.toString())
             }
 
             override fun isLastPage(): Boolean {
@@ -54,11 +61,27 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
     }
 
     override fun initWidgets() {
+        rclLook.adapter = lookAdapter
+        rclLook.layoutManager = LinearLayoutManager(ctx, LinearLayoutManager.HORIZONTAL, false)
+        rclLook.setHasFixedSize(true)
+        setPaginationLayoutManager()
+        rclLook.addOnScrollListener(paginationScrollListener)
         presenter.searchLook(currentPage.toString())
     }
 
+    private fun setPaginationLayoutManager() {
+        paginationScrollListener.setLayoutManager(rclLook.layoutManager as LinearLayoutManager)
+    }
+
     override fun loadOutfitSuccess(model: List<OutfitsModel>) {
-        ctx?.toast("Load Outfit SIZE: ${model.size}}")
+        if (currentPage == 0) {
+            looks.clear()
+        } else {
+            lookAdapter.removeLoadingView()
+        }
+        looks.addAll(model)
+        lookAdapter.notifyDataSetChanged()
+//        ctx?.toast("Load Outfit SIZE: ${model.size}}")
     }
 
     override fun onSendDataSuccess() {

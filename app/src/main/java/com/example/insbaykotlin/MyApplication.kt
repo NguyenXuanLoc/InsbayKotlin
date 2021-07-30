@@ -7,6 +7,8 @@ import com.example.insbaykotlin.common.ext.applyIOWithAndroidMainThread
 import com.example.insbaykotlin.common.util.CommonUtil
 import com.example.insbaykotlin.common.util.SharedPreferencesUtil
 import com.example.insbaykotlin.data.interactor.PubInteractor
+import com.facebook.drawee.backends.pipeline.Fresco
+import com.facebook.imagepipeline.core.ImagePipelineConfig
 import io.reactivex.disposables.CompositeDisposable
 import org.jetbrains.anko.ctx
 import timber.log.Timber
@@ -23,8 +25,19 @@ class MyApplication : MultiDexApplication() {
         super.onCreate()
         instance = this
         Log.e("TAG", "MY APPLICATIOn")
+        initFresco()
         getTokenAnonymous()
         initTimber()
+    }
+
+    private fun initFresco() {
+        ImagePipelineConfig.newBuilder(this).apply {
+            isDownsampleEnabled = true
+        }
+            .build()
+            .run {
+                Fresco.initialize(this@MyApplication, this)
+            }
     }
 
     private fun getTokenAnonymous() {

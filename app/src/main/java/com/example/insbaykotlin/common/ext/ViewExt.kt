@@ -53,7 +53,6 @@ fun ViewGroup.setAnimation(visibility: Int, animation: Int) {
     }
 }
 
-
 fun View.showSnackbar(
     msg: Any?,
     length: Int = Snackbar.LENGTH_SHORT,
