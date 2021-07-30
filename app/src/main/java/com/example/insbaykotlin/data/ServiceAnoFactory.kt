@@ -1,8 +1,10 @@
 package com.example.insbaykotlin.data
 
 import com.example.insbaykotlin.BuildConfig
-import com.example.insbaykotlin.data.response.DataResponse
-import com.example.task.common.Api
+import com.example.insbaykotlin.common.util.CommonUtil
+import com.example.insbaykotlin.data.response.SearchOutfitsResponse
+import com.example.insbaykotlin.common.Api
+import com.example.insbaykotlin.common.Param
 import com.google.gson.GsonBuilder
 import io.reactivex.Single
 import okhttp3.OkHttpClient
@@ -11,14 +13,13 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
-import vn.vano.vicall.data.response.BaseResponse
 import java.util.concurrent.TimeUnit
 
 interface ServiceAnoFactory {
     companion object {
         private const val REQUEST_TIMEOUT = 15L
 
-        fun create(BASE_URL: String): ServiceAnoFactory {
+        fun create(BASE_URL: String = "http://insbay.sigma-solutions.vn/ano/"): ServiceAnoFactory {
             val okHttpClientBuilder = OkHttpClient.Builder()
                 .connectTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
                 .writeTimeout(REQUEST_TIMEOUT, TimeUnit.SECONDS)
@@ -26,10 +27,11 @@ interface ServiceAnoFactory {
                 .addInterceptor { chain ->
                     val newRequest = chain.request().newBuilder()
                         .addHeader("Content-Type", "application/x-www-form-urlencoded")
-                        .addHeader(
-                            "Authorization",
-                            "Bearer " + "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgyOTk5NjYsImlhdCI6MTYyNzQzNTc4Niwic3ViIjoiLTgzIiwiaXNzIjoiRmJZR1hiTDdtNmhtR1pDVkNHbHVsZUdtRjdiUGpSaHMiLCJtZXRhIjoie1wiaWRcIjogXCItODNcIiwgXCJ1c2VybmFtZVwiOiBcImFub255bW91c1wiLCBcImNvdW50cnlcIjogXCJQTFwiLCBcInVzZXJfdHlwZVwiOiAwfSIsInJvbGUiOiJhbm9ueW1vdXMifQ.DWnh7Y0ZN25uHYwRZjbe2vJEabltGSQvzFSkSTaJjys"
-                        )
+                        .apply {
+                            CommonUtil.getDeviceToken().also { token ->
+                                addHeader("Authorization", "Bearer $token")
+                            }
+                        }
                         .build()
                     chain.proceed(newRequest)
                 }
@@ -54,13 +56,12 @@ interface ServiceAnoFactory {
         }
     }
 
-    @GET(Api.SEARCH_PRODUCT)
-    fun searchProduct(
-        @Query("access_token") token: String,
-        @Query("q") q: String,
-        @Query("limit") limit: String,
-        @Query("user_type") user_type: String,
-        @Query("country") country: String
-    ): Single<DataResponse>
+    @GET(Api.SEARCH_LOOK)
+    fun searchLook(
+        @Query(Param.USER_TYPE) user_type: String,
+        @Query(Param.LIMIT) limit: String,
+        @Query(Param.PAGE) page: String,
+        @Query(Param.ACCESS_TOKEN) access_token: String,
+    ): Single<SearchOutfitsResponse>
 
 }

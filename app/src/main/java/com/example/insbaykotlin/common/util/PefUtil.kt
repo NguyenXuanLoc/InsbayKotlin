@@ -3,7 +3,7 @@ package com.example.insbaykotlin.common.util
 import android.annotation.SuppressLint
 import android.app.Application
 import android.content.Context
-import com.example.task.common.Constant
+import com.example.insbaykotlin.common.Constant
 import java.lang.reflect.InvocationTargetException
 
 object PefUtil {

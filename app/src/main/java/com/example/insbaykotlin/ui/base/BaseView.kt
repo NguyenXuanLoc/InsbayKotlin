@@ -1,6 +1,6 @@
 package com.example.task.ui.base
 
-import com.example.task.common.ErrorCode
+import com.example.insbaykotlin.common.ErrorCode
 
 interface BaseView {
     fun onSendDataSuccess()

@@ -28,7 +28,7 @@
         <item name="android:alertDialogTheme">@style/AlertDialog</item>
 
         <item name="colorPrimary">@color/colorPrimary</item>
-<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
 
     </style>
 
@@ -216,9 +216,9 @@
         <item name="fontFamily">@font/poppins_regular</item>
         <item name="android:drawablePadding">@dimen/dimen_1x</item>
     </style>
-<!--    <style name="TextViewClothDetailCondition.Bold">
-        <item name="fontType">bold</item>
-    </style>-->
+    <!--    <style name="TextViewClothDetailCondition.Bold">
+            <item name="fontType">bold</item>
+        </style>-->
 
     <style name="StyleDot">
         <item name="android:layout_width">wrap_content</item>

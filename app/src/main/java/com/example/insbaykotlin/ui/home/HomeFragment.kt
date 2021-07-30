@@ -2,7 +2,6 @@ package com.example.insbaykotlin.ui.home
 
 import com.example.insbaykotlin.R
 import com.example.insbaykotlin.common.ext.ctx
-import com.example.insbaykotlin.ui.Search.SearchFragment
 import com.example.pview.ui.base.BaseFragment
 
 class HomeFragment : BaseFragment<HomeView, HomePresenter>(), HomeView {

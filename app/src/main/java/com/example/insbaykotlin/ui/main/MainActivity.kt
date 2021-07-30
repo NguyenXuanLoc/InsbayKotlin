@@ -34,8 +34,9 @@ class MainActivity : BaseActivity<MainView, MainPresenter>(), MainView,
         vpMain.adapter = MainStateAdapter(self)
         vpMain.orientation = ViewPager2.ORIENTATION_HORIZONTAL
         vpMain.isUserInputEnabled = false
-        vpMain.currentItem = SEARCH_INDEX
         bnvMain.setOnNavigationItemSelectedListener(this)
+        bnvMain.selectedItemId = R.id.menu_search
+        vpMain.currentItem = SEARCH_INDEX
         toolbarBase.gone()
     }
 

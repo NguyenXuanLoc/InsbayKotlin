@@ -2,17 +2,13 @@ package com.example.insbaykotlin.data
 
 import com.example.insbaykotlin.BuildConfig
 import com.example.insbaykotlin.common.util.PefUtil
-import com.example.task.common.Api
-import com.example.task.common.Constant
+import com.example.insbaykotlin.common.Constant
 import com.google.gson.GsonBuilder
-import io.reactivex.Single
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.POST
 import java.util.concurrent.TimeUnit
 
 interface LoginFactory {
@@ -29,7 +25,6 @@ interface LoginFactory {
                     val newRequest = chain.request().newBuilder()
                         .addHeader("authorization", "Bearer xyz")
                         .addHeader("Origin", "http://mobion.vn")
-                        .addHeader("User-Agent", PefUtil.getString(Constant.SETTING_AGENT))
                         .addHeader("Content-Type", "application/json; charset=utf-8")
                         .addHeader("Accept", "*/*")
                         .addHeader("Referer", "http://mobion.vn/u/login")

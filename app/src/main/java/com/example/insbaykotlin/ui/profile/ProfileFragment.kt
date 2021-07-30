@@ -1,4 +1,4 @@
-package com.example.insbaykotlin.ui.Profile
+package com.example.insbaykotlin.ui.profile
 
 import com.example.insbaykotlin.R
 import com.example.insbaykotlin.common.ext.ctx

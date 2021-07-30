@@ -1,4 +1,4 @@
-package vn.vano.vicall.data.response
+package com.example.insbaykotlin.data.base
 
 import com.google.gson.annotations.SerializedName
 

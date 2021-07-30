@@ -1,8 +1,9 @@
 package com.example.insbaykotlin.data
 
 import com.example.insbaykotlin.BuildConfig
-import com.example.insbaykotlin.data.response.AnonymousResponse
-import com.example.task.common.Api
+import com.example.insbaykotlin.common.util.CommonUtil
+import com.example.insbaykotlin.data.model.AnonymousModel
+import com.example.insbaykotlin.common.Api
 import com.google.gson.GsonBuilder
 import io.reactivex.Single
 import okhttp3.OkHttpClient
@@ -18,7 +19,7 @@ import java.util.concurrent.TimeUnit
 interface ServicePubFactory {
 
     companion object {
-        private const val REQUEST_TIMEOUT = 20L
+        private const val REQUEST_TIMEOUT = 30L
 
         fun create(BASE_URL: String): ServicePubFactory {
             val okHttpClientBuilder = OkHttpClient.Builder()
@@ -28,10 +29,11 @@ interface ServicePubFactory {
                 .addInterceptor { chain ->
                     val newRequest = chain.request().newBuilder()
                         .addHeader("Content-Type", "application/x-www-form-urlencoded")
-                        .addHeader(
-                            "Authorization",
-                            "Bearer " + "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjgyOTk5NjYsImlhdCI6MTYyNzQzNTc4Niwic3ViIjoiLTgzIiwiaXNzIjoiRmJZR1hiTDdtNmhtR1pDVkNHbHVsZUdtRjdiUGpSaHMiLCJtZXRhIjoie1wiaWRcIjogXCItODNcIiwgXCJ1c2VybmFtZVwiOiBcImFub255bW91c1wiLCBcImNvdW50cnlcIjogXCJQTFwiLCBcInVzZXJfdHlwZVwiOiAwfSIsInJvbGUiOiJhbm9ueW1vdXMifQ.DWnh7Y0ZN25uHYwRZjbe2vJEabltGSQvzFSkSTaJjys"
-                        )
+                        .apply {
+                            CommonUtil.getDeviceToken().also { token ->
+                                addHeader("Authorization", "Bearer $token")
+                            }
+                        }
                         .build()
                     chain.proceed(newRequest)
                 }
@@ -58,5 +60,5 @@ interface ServicePubFactory {
 
     @FormUrlEncoded
     @POST(Api.GET_ANONYMOUS_TOKEN)
-    fun getAnonymousToken(@FieldMap params: HashMap<String, String>): Single<AnonymousResponse>
+    fun getAnonymousToken(@FieldMap params: HashMap<String, String>): Single<AnonymousModel>
 }

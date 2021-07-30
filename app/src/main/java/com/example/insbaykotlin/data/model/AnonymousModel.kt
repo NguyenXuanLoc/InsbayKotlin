@@ -1,5 +1,7 @@
 package com.example.insbaykotlin.data.model
 
-class AnonymousModel {
-    var token: String? = null
-}
+import com.google.gson.annotations.SerializedName
+
+class AnonymousModel(
+	@SerializedName("access_token") val access_token: String,
+)

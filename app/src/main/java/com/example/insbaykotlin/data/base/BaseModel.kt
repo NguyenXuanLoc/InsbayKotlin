@@ -1,7 +1,6 @@
-package com.example.task.data.model
+package com.example.insbaykotlin.data.base
 
-import com.example.task.common.ResponseCode
-import com.google.gson.Gson
+import com.example.insbaykotlin.common.ResponseCode
 import java.io.Serializable
 
 open class BaseModel : Serializable {

@@ -1,7 +1,10 @@
 package com.example.insbaykotlin.common.ext
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.net.ConnectivityManager
+import com.example.insbaykotlin.MyApplication
+import timber.log.Timber
 
 
 fun Context.networkIsConnected(): Boolean {
@@ -12,6 +15,10 @@ fun Context.networkIsConnected(): Boolean {
     }
     return false
 }
+
+val Context.sharedPref: SharedPreferences
+    get() = MyApplication.instance.sharedPref
+
 
 fun Context.showNetworkError() {
 //    toast(R.string.err_network_not_available)

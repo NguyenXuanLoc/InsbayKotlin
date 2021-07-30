@@ -2,10 +2,9 @@ package com.example.insbaykotlin.ui.main
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
-import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.insbaykotlin.ui.Profile.ProfileFragment
-import com.example.insbaykotlin.ui.Search.SearchFragment
+import com.example.insbaykotlin.ui.profile.ProfileFragment
+import com.example.insbaykotlin.ui.search.SearchFragment
 import com.example.insbaykotlin.ui.camera.CameraFragment
 import com.example.insbaykotlin.ui.home.HomeFragment
 
