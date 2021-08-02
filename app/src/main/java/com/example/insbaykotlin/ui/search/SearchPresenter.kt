@@ -7,6 +7,7 @@ import com.example.insbaykotlin.common.ext.networkIsConnected
 import com.example.insbaykotlin.common.util.CommonUtil
 import com.example.insbaykotlin.data.interactor.AnoInteractor
 import com.example.pview.ui.base.BasePresenterImp
+import java.util.*
 
 class SearchPresenter(var ctx: Context) : BasePresenterImp<SearchView>(ctx) {
     private val interactor by lazy { AnoInteractor() }
@@ -18,7 +19,6 @@ class SearchPresenter(var ctx: Context) : BasePresenterImp<SearchView>(ctx) {
                     .applyIOWithAndroidMainThread()
                     .subscribe({ it ->
                         v.loadOutfitSuccess(it.outfits)
-                        Log.e("TAG", "ok: " + it.total_records)
                     }, { it ->
                         Log.e("TAG", "e: " + it.message)
                     })
@@ -26,6 +26,20 @@ class SearchPresenter(var ctx: Context) : BasePresenterImp<SearchView>(ctx) {
                 v.onNetworkError()
             }
         }
+    }
 
+    fun searchTvStar() {
+        view?.also { v ->
+            if (ctx.networkIsConnected()) {
+                interactor.searchTvStar(CommonUtil.getDeviceToken()!!)
+                    .applyIOWithAndroidMainThread()
+                    .subscribe({ it ->
+                        v.loadTvStarSuccess(it.users)
+                    }, { it ->
+                    })
+            } else {
+                v.onNetworkError()
+            }
+        }
     }
 }

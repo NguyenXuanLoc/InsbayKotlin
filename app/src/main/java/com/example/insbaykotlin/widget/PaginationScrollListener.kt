@@ -4,14 +4,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.insbaykotlin.common.Constant
 
-abstract class PaginationScrollListener(lm: LinearLayoutManager? = null) :
+abstract class PaginationScrollListener(
+    lm: LinearLayoutManager? = null,
+    var size: Int? = Constant.PAGE_SIZE
+) :
     RecyclerView.OnScrollListener() {
 
     private var layoutManager: LinearLayoutManager? = lm
 
     override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
         super.onScrolled(recyclerView, dx, dy)
-
         layoutManager?.also { layoutManager ->
             val visibleItemCount = layoutManager.childCount
             val totalItemCount = layoutManager.itemCount
@@ -20,7 +22,7 @@ abstract class PaginationScrollListener(lm: LinearLayoutManager? = null) :
             if (!isLoading() && !isLastPage()) {
                 if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount
                     && firstVisibleItemPosition >= 0
-                    && totalItemCount >= Constant.PAGE_SIZE
+                    && totalItemCount >= size!!
                 ) {
                     loadMoreItems()
                 }

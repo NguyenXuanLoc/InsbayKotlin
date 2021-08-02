@@ -22,6 +22,7 @@ object ResponseCode {
 object Api {
     const val GET_ANONYMOUS_TOKEN = "users/api/v2/users/anonymous_token"
     const val SEARCH_LOOK = "clothes/api/v2/outfits/list"
+    const val SEARCH_TV_STAR = "users/api/v2/users/list_type/7"
 }
 object Param{
     const val USER_TYPE = "user_type"

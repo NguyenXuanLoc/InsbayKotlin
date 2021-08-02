@@ -9,8 +9,10 @@ import android.view.animation.AnimationUtils
 import android.view.animation.LayoutAnimationController
 import android.widget.EditText
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.widget.NestedScrollView
+import com.example.insbaykotlin.common.util.CommonUtil
 import com.example.insbaykotlin.common.util.SafeOnClickListener
 import com.google.android.material.snackbar.Snackbar
 
@@ -52,7 +54,17 @@ fun ViewGroup.setAnimation(visibility: Int, animation: Int) {
         startAnimation(anim)
     }
 }
-
+fun View.setRatio(
+    activity: AppCompatActivity,
+    x: Int,
+    y: Int,
+    margin: Int,
+    width: Int = CommonUtil.getScreenWidthAsPixel(activity)
+) {
+    val w = width - margin
+    layoutParams.width = w
+    layoutParams.height = w * y / x
+}
 fun View.showSnackbar(
     msg: Any?,
     length: Int = Snackbar.LENGTH_SHORT,

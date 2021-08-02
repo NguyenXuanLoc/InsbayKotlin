@@ -58,12 +58,12 @@ fun WebView.loadUrlAutoPlay(url: String, v: WebViewInterface) {
             view: WebView?,
             request: WebResourceRequest?
         ): WebResourceResponse? {
-            if (request?.url?.toString()?.contains("push-log") == true) {
+           /* if (request?.url?.toString()?.contains("push-log") == true) {
                 request.url.getQueryParameter("current_time")?.let { currentTime ->
                     var times = currentTime.split(".")
                     v.timeWatching(times[0].toInt())
                 }
-            }
+            }*/
             return super.shouldInterceptRequest(view, request)
         }
     }
@@ -74,7 +74,6 @@ fun WebView.login(url: String, v: WebViewInterface) {
     this.webViewClient = object : WebViewClient() {
         override fun onPageFinished(view: WebView?, url: String?) {
             v.readyPlayVideo()
-            Log.e("TAG", "LOGIN")
             //Auto play when loadVideo success
 //            view?.loadUrl("javascript:(function() { document.getElementsByTagName('video')[0].play(); })()");
             /*      Handler().postDelayed({

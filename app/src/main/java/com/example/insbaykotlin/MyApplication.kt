@@ -24,7 +24,6 @@ class MyApplication : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        Log.e("TAG", "MY APPLICATIOn")
         initFresco()
         getTokenAnonymous()
         initTimber()
@@ -47,7 +46,6 @@ class MyApplication : MultiDexApplication() {
             .applyIOWithAndroidMainThread()
             .subscribe(
                 { it ->
-                    Log.e("TAG", "saveTOken: " + it.access_token)
                     CommonUtil.saveDeviceToken(token = it.access_token)
                 }, { it ->
                     Timber.e("default Token: " + it.message)

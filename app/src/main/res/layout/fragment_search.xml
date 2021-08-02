@@ -55,11 +55,12 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/zero"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <ProgressBar
+                android:id="@+id/pbLooks"
                 style="@style/CustomProgressDialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -77,22 +78,24 @@
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/ic_chevron_right_black_24dp"
             android:padding="@dimen/dimen_1x"
-            android:text="@string/look"
+            android:text="@string/tv_star"
             android:textSize="@dimen/dimen_2x" />
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/zero"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <ProgressBar
+                android:id="@+id/pbTvStar"
                 style="@style/CustomProgressDialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rclTvStar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </FrameLayout>
@@ -103,24 +106,26 @@
             android:layout_height="wrap_content"
             android:drawableRight="@drawable/ic_chevron_right_black_24dp"
             android:padding="@dimen/dimen_1x"
-            android:text="@string/look"
+            android:text="@string/product"
             android:textSize="@dimen/dimen_2x" />
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/zero"
             android:layout_weight="1"
             android:orientation="vertical">
 
             <ProgressBar
+                android:id="@+id/pbProducts"
                 style="@style/CustomProgressDialog"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical|center_horizontal" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rclProducts"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="match_parent" />
         </FrameLayout>
     </LinearLayout>
 </LinearLayout>

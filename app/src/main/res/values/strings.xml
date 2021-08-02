@@ -192,7 +192,7 @@
     <string name="change_cover_title">zmień zdjęcie profilowe</string>
     <string name="txt_likes">polubień</string>
     <string name="txt_comments">komentarzy</string>
-    <string name="clothes">produkty</string>
+    <string name="product">produkty</string>
     <string name="make_private">nie publikuj</string>
     <string name="make_public">opublikuj</string>
     <string name="scr_register_hint_email">e-mail</string>
@@ -362,7 +362,7 @@
     <string name="txt_like_234">polubienia</string>
     <string name="txt_comment_1">komentarz</string>
     <string name="txt_comment_234">komentarze</string>
-    <string name="people_and_brand">programy tv</string>
+    <string name="tv_star">programy tv</string>
 
     <string-array name="change_cover_array">
         <item>usuń tę tapetę</item>

@@ -2,6 +2,7 @@ package com.example.insbaykotlin.common.util
 
 import android.app.Activity
 import android.content.Context
+import android.util.DisplayMetrics
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
@@ -48,5 +49,22 @@ object CommonUtil {
 
     fun saveDeviceToken(ctx: Context = MyApplication.instance.ctx, token: String) {
         ctx.sharedPref[PrefCode.PREF_TOKEN] = token
+    }
+
+    fun getScreenWidthAsPixel(activity: AppCompatActivity): Int {
+        val dm = DisplayMetrics()
+        activity.windowManager.defaultDisplay.getMetrics(dm)
+        return dm.widthPixels
+    }
+
+    fun convertDpToPixel(ctx: Context?, dimensionIds: IntArray): Int {
+        var result = 0
+        ctx?.run {
+            for (id in dimensionIds) {
+                result += resources.getDimension(id).toInt()
+            }
+        }
+
+        return result
     }
 }
