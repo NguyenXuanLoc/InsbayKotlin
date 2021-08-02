@@ -5,16 +5,22 @@ import com.example.insbaykotlin.R
 import com.example.insbaykotlin.common.ext.ctx
 import com.example.insbaykotlin.common.ext.gone
 import com.example.insbaykotlin.data.model.OutfitsModel
+import com.example.insbaykotlin.data.model.ProductModel
 import com.example.insbaykotlin.data.model.UsersModel
 import com.example.insbaykotlin.widget.PaginationScrollListener
 import com.example.pview.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_search.*
+import org.jetbrains.anko.toast
 
 class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
     private var currentPageLooks = 0
     private var hasMoreDataLooks = true
     private var isLoadingLooks = false
     private val looks by lazy { ArrayList<OutfitsModel>() }
+    private val lookAdapter by lazy {
+        SearchLookAdapter(parentActivity, looks, { it ->
+        })
+    }
 
     private var currentPageTvStar = 0
     private var hasMoreDataTvStar = true
@@ -25,13 +31,19 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
 
         })
     }
-    private val lookAdapter by lazy {
-        SearchLookAdapter(parentActivity, looks, { it ->
+
+    private var currentPageProduct: Int = 0
+    private var hasMoreDataProduct: Boolean = true
+    private var isLoadingProduct = false
+    private val products by lazy { ArrayList<ProductModel>() }
+    private val productAdapter by lazy {
+        SearchProductAdapter(parentActivity, products, { it ->
+
         })
     }
 
     private val paginationTvStarScrollListener by lazy {
-        object : PaginationScrollListener(rclTvStar.layoutManager as LinearLayoutManager,20) {
+        object : PaginationScrollListener(rclTvStar.layoutManager as LinearLayoutManager, 20) {
             override fun loadMoreItems() {
                 isLoadingTvStar = true
                 currentPageTvStar++;
@@ -72,6 +84,26 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
 
         }
     }
+    private val paginationProductScrollListener by lazy {
+        object : PaginationScrollListener(lm = rclProducts.layoutManager as LinearLayoutManager) {
+            override fun loadMoreItems() {
+                isLoadingProduct = true
+                currentPageProduct++
+                rclProducts.post {
+                    productAdapter.addItemLoading()
+                }
+                presenter.searchProduct(currentPageProduct.toString())
+            }
+
+            override fun isLastPage(): Boolean {
+                return !hasMoreDataProduct
+            }
+
+            override fun isLoading(): Boolean {
+                return isLoadingProduct
+            }
+        }
+    }
 
     companion object {
         fun newInstance(): SearchFragment {
@@ -99,26 +131,30 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
         rclTvStar.adapter = tvStarAdapter
         rclTvStar.layoutManager = LinearLayoutManager(ctx, LinearLayoutManager.HORIZONTAL, false)
         rclTvStar.setHasFixedSize(true)
-        setPaginationLayoutManager()
-        rclLook.addOnScrollListener(paginationLooksScrollListener)
-        rclTvStar.addOnScrollListener(paginationTvStarScrollListener)
 
-        rclProducts.adapter = lookAdapter
+        rclProducts.adapter = productAdapter
         rclProducts.layoutManager = LinearLayoutManager(ctx, LinearLayoutManager.HORIZONTAL, false)
         rclProducts.setHasFixedSize(true)
 
+        setPaginationLayoutManager()
+        rclLook.addOnScrollListener(paginationLooksScrollListener)
+        rclTvStar.addOnScrollListener(paginationTvStarScrollListener)
+        rclProducts.addOnScrollListener(paginationProductScrollListener)
+
+
         presenter.searchLook(currentPageLooks.toString())
         presenter.searchTvStar()
+        presenter.searchProduct(currentPageProduct.toString())
     }
 
     private fun setPaginationLayoutManager() {
         paginationLooksScrollListener.setLayoutManager(rclLook.layoutManager as LinearLayoutManager)
         paginationTvStarScrollListener.setLayoutManager(rclTvStar.layoutManager as LinearLayoutManager)
+        paginationTvStarScrollListener.setLayoutManager(rclProducts.layoutManager as LinearLayoutManager)
     }
 
     override fun loadOutfitSuccess(model: List<OutfitsModel>) {
         pbLooks.gone()
-        pbProducts.gone()
         isLoadingLooks = false;
         if (currentPageLooks == 0) {
             looks.clear()
@@ -141,6 +177,18 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
         }
         tvStars.addAll(model)
         tvStarAdapter.notifyDataSetChanged()
+    }
+
+    override fun loadProductSuccess(model: List<ProductModel>) {
+        pbProducts.gone()
+        isLoadingProduct = false
+        if (currentPageProduct == 0) {
+            products.clear()
+        } else {
+            productAdapter.removeItemLoading()
+        }
+        products.addAll(model)
+        productAdapter.notifyDataSetChanged()
     }
 
     override fun onSendDataSuccess() {

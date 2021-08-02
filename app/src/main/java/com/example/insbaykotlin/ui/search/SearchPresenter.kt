@@ -2,6 +2,7 @@ package com.example.insbaykotlin.ui.search
 
 import android.content.Context
 import android.util.Log
+import com.example.insbaykotlin.common.ext.addToCompositeDisposable
 import com.example.insbaykotlin.common.ext.applyIOWithAndroidMainThread
 import com.example.insbaykotlin.common.ext.networkIsConnected
 import com.example.insbaykotlin.common.util.CommonUtil
@@ -21,7 +22,7 @@ class SearchPresenter(var ctx: Context) : BasePresenterImp<SearchView>(ctx) {
                         v.loadOutfitSuccess(it.outfits)
                     }, { it ->
                         Log.e("TAG", "e: " + it.message)
-                    })
+                    }).addToCompositeDisposable(compositeDisposable)
             } else {
                 v.onNetworkError()
             }
@@ -36,9 +37,24 @@ class SearchPresenter(var ctx: Context) : BasePresenterImp<SearchView>(ctx) {
                     .subscribe({ it ->
                         v.loadTvStarSuccess(it.users)
                     }, { it ->
-                    })
+                    }).addToCompositeDisposable(compositeDisposable)
             } else {
                 v.onNetworkError()
+            }
+        }
+    }
+
+    fun searchProduct(
+        page: String
+    ) {
+        view?.also { v ->
+            if (ctx.networkIsConnected()) {
+                interactor.searchProduct(page, CommonUtil.getDeviceToken()!!)
+                    .applyIOWithAndroidMainThread()
+                    .subscribe({ it ->
+                        v.loadProductSuccess(it.result!!)
+                    }, {})
+                    .addToCompositeDisposable(compositeDisposable)
             }
         }
     }

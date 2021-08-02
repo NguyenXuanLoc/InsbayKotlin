@@ -23,14 +23,17 @@ object Api {
     const val GET_ANONYMOUS_TOKEN = "users/api/v2/users/anonymous_token"
     const val SEARCH_LOOK = "clothes/api/v2/outfits/list"
     const val SEARCH_TV_STAR = "users/api/v2/users/list_type/7"
+    const val SEARCH_PRODUCT = "clothes/api/v2/clothes/famous_clothes_with_condition"
 }
-object Param{
+
+object Param {
     const val USER_TYPE = "user_type"
     const val LIMIT = "limit"
     const val PAGE = "page"
     const val ACCESS_TOKEN = "access_token"
 
 }
+
 object Env {
     const val BASE_URL_PUBLIC = "http://insbay.sigma-solutions.vn/pub/"
     const val BASE_URL_ANO = "http://insbay.sigma-solutions.vn/ano/"

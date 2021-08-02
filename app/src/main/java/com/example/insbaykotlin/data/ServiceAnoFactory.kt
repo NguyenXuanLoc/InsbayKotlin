@@ -5,6 +5,7 @@ import com.example.insbaykotlin.common.Api
 import com.example.insbaykotlin.common.Param
 import com.example.insbaykotlin.common.util.CommonUtil
 import com.example.insbaykotlin.data.response.SearchOutfitsResponse
+import com.example.insbaykotlin.data.response.SearchProductResponse
 import com.example.insbaykotlin.data.response.SearchTvStarResponse
 import com.google.gson.GsonBuilder
 import io.reactivex.Single
@@ -15,6 +16,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
+import retrofit2.http.QueryMap
 import java.util.concurrent.TimeUnit
 
 interface ServiceAnoFactory {
@@ -70,4 +72,7 @@ interface ServiceAnoFactory {
     fun searchTvStar(
         @Query(Param.ACCESS_TOKEN) access_token: String
     ): Single<SearchTvStarResponse>
+
+    @GET(Api.SEARCH_PRODUCT)
+    fun searchProduct(@QueryMap map: HashMap<String, String>): Single<SearchProductResponse>
 }
