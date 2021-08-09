@@ -1,14 +1,15 @@
 package com.example.insbaykotlin.ui.search
 
 import android.content.Context
-import android.util.Log
+import android.widget.EditText
+import com.example.insbaykotlin.common.ErrorKey
 import com.example.insbaykotlin.common.ext.addToCompositeDisposable
 import com.example.insbaykotlin.common.ext.applyIOWithAndroidMainThread
 import com.example.insbaykotlin.common.ext.networkIsConnected
 import com.example.insbaykotlin.common.util.CommonUtil
+import com.example.insbaykotlin.common.util.RxSearchObservable
 import com.example.insbaykotlin.data.interactor.AnoInteractor
 import com.example.pview.ui.base.BasePresenterImp
-import java.util.*
 
 class SearchPresenter(var ctx: Context) : BasePresenterImp<SearchView>(ctx) {
     private val interactor by lazy { AnoInteractor() }
@@ -21,7 +22,9 @@ class SearchPresenter(var ctx: Context) : BasePresenterImp<SearchView>(ctx) {
                     .subscribe({ it ->
                         v.loadOutfitSuccess(it.outfits)
                     }, { it ->
-                        Log.e("TAG", "e: " + it.message)
+                        if (it.localizedMessage == ErrorKey.tokenExpired) {
+                        getTokenAnonymous { searchLook(page) }
+                    }
                     }).addToCompositeDisposable(compositeDisposable)
             } else {
                 v.onNetworkError()
@@ -37,6 +40,11 @@ class SearchPresenter(var ctx: Context) : BasePresenterImp<SearchView>(ctx) {
                     .subscribe({ it ->
                         v.loadTvStarSuccess(it.users)
                     }, { it ->
+                        if (it.localizedMessage == ErrorKey.tokenExpired) {
+                            getTokenAnonymous {
+                                searchTvStar()
+                            }
+                        }
                     }).addToCompositeDisposable(compositeDisposable)
             } else {
                 v.onNetworkError()
@@ -53,9 +61,38 @@ class SearchPresenter(var ctx: Context) : BasePresenterImp<SearchView>(ctx) {
                     .applyIOWithAndroidMainThread()
                     .subscribe({ it ->
                         v.loadProductSuccess(it.result!!)
+                    }, {
+                        if (it.localizedMessage == ErrorKey.tokenExpired) {
+                            getTokenAnonymous { searchProduct(page) }
+                        }
+                    })
+                    .addToCompositeDisposable(compositeDisposable)
+            }
+        }
+    }
+
+    fun searchAll(request: String) {
+        view?.also { v ->
+            if (ctx.networkIsConnected()) {
+                interactor.searchAll(request, CommonUtil.getDeviceToken()!!)
+                    .applyIOWithAndroidMainThread()
+                    .subscribe({
+                        v.searchAll(request)
                     }, {})
                     .addToCompositeDisposable(compositeDisposable)
             }
+        }
+    }
+
+    fun registerSearchTypingListener(lblSearch: EditText) {
+        view?.also { v ->
+            RxSearchObservable.fromView(lblSearch).applyIOWithAndroidMainThread().subscribe(
+                {
+                    searchAll(it)
+                }, {
+
+                }
+            )
         }
     }
 }

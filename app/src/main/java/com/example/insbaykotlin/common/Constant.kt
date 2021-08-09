@@ -20,10 +20,11 @@ object ResponseCode {
 }
 
 object Api {
-    const val GET_ANONYMOUS_TOKEN = "users/api/v2/users/anonymous_token"
+    const val GET_ANONYMOUS_TOKEN = "users/api/v2/users/anonymous_token?"
     const val SEARCH_LOOK = "clothes/api/v2/outfits/list"
     const val SEARCH_TV_STAR = "users/api/v2/users/list_type/7"
     const val SEARCH_PRODUCT = "clothes/api/v2/clothes/famous_clothes_with_condition"
+    const val SEARCH_ALL = "search/api/v2/search/main"
 }
 
 object Param {
@@ -31,7 +32,17 @@ object Param {
     const val LIMIT = "limit"
     const val PAGE = "page"
     const val ACCESS_TOKEN = "access_token"
+    const val COUNTRY = "country"
+    const val Q = "q"
+}
 
+object ParamKey {
+    const val country = "KR"
+    const val userType = "7"
+}
+
+object ErrorKey {
+    const val tokenExpired = "HTTP 401 Unauthorized"
 }
 
 object Env {

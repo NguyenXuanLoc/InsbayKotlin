@@ -75,4 +75,7 @@ interface ServiceAnoFactory {
 
     @GET(Api.SEARCH_PRODUCT)
     fun searchProduct(@QueryMap map: HashMap<String, String>): Single<SearchProductResponse>
+
+    @GET(Api.SEARCH_ALL)
+    fun searchAll(@QueryMap map: HashMap<String, String>): Single<String>
 }

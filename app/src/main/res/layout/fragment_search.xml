@@ -17,7 +17,7 @@
         android:padding="@dimen/spacing_small">
 
         <EditText
-            android:id="@+id/edtext_search"
+            android:id="@+id/lblSearch"
             style="@style/TextView.Regular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

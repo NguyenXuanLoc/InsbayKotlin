@@ -9,4 +9,5 @@ interface SearchView : BaseView {
     fun loadOutfitSuccess(model: List<OutfitsModel>)
     fun loadTvStarSuccess(model: List<UsersModel>)
     fun loadProductSuccess(model: List<ProductModel>)
+    fun searchAll(request: String)
 }

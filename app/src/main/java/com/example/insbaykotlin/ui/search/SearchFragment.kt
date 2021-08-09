@@ -141,10 +141,11 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
         rclTvStar.addOnScrollListener(paginationTvStarScrollListener)
         rclProducts.addOnScrollListener(paginationProductScrollListener)
 
-
         presenter.searchLook(currentPageLooks.toString())
         presenter.searchTvStar()
         presenter.searchProduct(currentPageProduct.toString())
+
+        presenter.registerSearchTypingListener(lblSearch)
     }
 
     private fun setPaginationLayoutManager() {
@@ -189,6 +190,10 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
         }
         products.addAll(model)
         productAdapter.notifyDataSetChanged()
+    }
+
+    override fun searchAll(request: String) {
+        ctx?.toast(request)
     }
 
     override fun onSendDataSuccess() {

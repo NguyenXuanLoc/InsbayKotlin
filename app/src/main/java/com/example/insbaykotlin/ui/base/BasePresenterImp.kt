@@ -1,11 +1,17 @@
 package com.example.pview.ui.base
 
 import android.content.Context
+import com.example.insbaykotlin.common.ext.addToCompositeDisposable
+import com.example.insbaykotlin.common.ext.applyIOWithAndroidMainThread
+import com.example.insbaykotlin.common.util.CommonUtil
+import com.example.insbaykotlin.data.interactor.PubInteractor
+import com.example.insbaykotlin.progressbar.MyProgressDialog
 import com.example.task.ui.base.BaseView
 import io.reactivex.disposables.CompositeDisposable
-import com.example.insbaykotlin.progressbar.MyProgressDialog
+import timber.log.Timber
 
 open class BasePresenterImp<T : BaseView>(private val context: Context) : BasePresenter<T>() {
+    private val interactor by lazy { PubInteractor() }
     private val progressDialog: MyProgressDialog by lazy { MyProgressDialog(context) }
 
     protected var view: T? = null
@@ -32,5 +38,20 @@ open class BasePresenterImp<T : BaseView>(private val context: Context) : BasePr
     override fun detachView() {
         compositeDisposable.clear()
         view = null
+    }
+
+    protected fun getTokenAnonymous(request: () -> Unit) {
+        val compositeDisposable = CompositeDisposable()
+        interactor.getAnonymousToken()
+            .applyIOWithAndroidMainThread()
+            .subscribe(
+                { it ->
+                    CommonUtil.saveDeviceToken(token = it.access_token)
+                    request()
+                }, { it ->
+                    Timber.e("default Token: " + it.message)
+                }
+            )
+            .addToCompositeDisposable(compositeDisposable)
     }
 }
