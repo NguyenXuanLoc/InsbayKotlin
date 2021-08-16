@@ -70,6 +70,14 @@
                 android:id="@+id/rclLook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="@dimen/text_size_12"
+                android:id="@+id/lblResultLook"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
         </FrameLayout>
 
         <TextView
@@ -98,6 +106,14 @@
                 android:id="@+id/rclTvStar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="@dimen/text_size_12"
+                android:id="@+id/lblResultTvStar"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
         </FrameLayout>
 
         <TextView
@@ -126,6 +142,14 @@
                 android:id="@+id/rclProducts"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+
+            <TextView
+                android:textSize="@dimen/text_size_12"
+                android:id="@+id/lblResultProducts"
+                style="@style/TextView.Regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
         </FrameLayout>
     </LinearLayout>
 </LinearLayout>

@@ -11,7 +11,7 @@ class SearchProductResponse {
     val nextPage: Int? = 0
 
     @SerializedName("result")
-    val result: List<ProductModel>? = null
+    val result: List<ProductModel>? = ArrayList<ProductModel>()
 
     @SerializedName("total_record")
     val totalRecord: Int? = 0

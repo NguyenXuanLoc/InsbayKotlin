@@ -14,7 +14,7 @@
     <string name="scr_welcome_hint_name">imię</string>
     <string name="scr_welcome_hint_sur_name">nazwisko</string>
     <string name="scr_welcome_hint_pw">hasło</string>
-    <string name="scr_welcome_remind">zapomniałeś hasła?</string>
+    <string name="scr_welcome_remind">zapomniałeś/aś hasła?</string>
     <string name="scr_welcome_login_facebook">zaloguj przy pomocy facebooka</string>
     <string name="scr_welcome_regiter">rejestracja</string>
 
@@ -468,6 +468,7 @@
 
     <!--not translate-->
     <!--sprint 3-->
+    <string name="no_result_">nie znaleziono wyników dla"</string>
     <string name="no_result">nie znaleziono wyników dla \"%1$s\"</string>
     <string name="no_result_default">brak wyników</string>
     <string name="login_fb">proszę się zalogować do facebook\'a …</string>

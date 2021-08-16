@@ -4,13 +4,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.insbaykotlin.R
 import com.example.insbaykotlin.common.ext.ctx
 import com.example.insbaykotlin.common.ext.gone
+import com.example.insbaykotlin.common.ext.visible
 import com.example.insbaykotlin.data.model.OutfitsModel
 import com.example.insbaykotlin.data.model.ProductModel
 import com.example.insbaykotlin.data.model.UsersModel
 import com.example.insbaykotlin.widget.PaginationScrollListener
 import com.example.pview.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_search.*
-import org.jetbrains.anko.toast
 
 class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
     private var currentPageLooks = 0
@@ -154,18 +154,32 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
         paginationTvStarScrollListener.setLayoutManager(rclProducts.layoutManager as LinearLayoutManager)
     }
 
+    override fun showLoading() {
+        pbLooks.visible()
+        pbProducts.visible()
+        pbTvStar.visible()
+        products.clear()
+        tvStars.clear()
+        looks.clear()
+        productAdapter.notifyDataSetChanged()
+        tvStarAdapter.notifyDataSetChanged()
+        lookAdapter.notifyDataSetChanged()
+        lblResultTvStar.gone()
+        lblResultProducts.gone()
+        lblResultLook.gone()
+    }
+
     override fun loadOutfitSuccess(model: List<OutfitsModel>) {
         pbLooks.gone()
         isLoadingLooks = false;
         if (currentPageLooks == 0) {
             looks.clear()
-
         } else {
             lookAdapter.removeLoadingView()
         }
         looks.addAll(model)
-
         lookAdapter.notifyDataSetChanged()
+        if (model.isEmpty()) lblLooks.text = parentActivity.getString(R.string.no_result_default)
     }
 
     override fun loadTvStarSuccess(model: List<UsersModel>) {
@@ -178,6 +192,8 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
         }
         tvStars.addAll(model)
         tvStarAdapter.notifyDataSetChanged()
+        if (model.isEmpty()) lblResultTvStar.text =
+            parentActivity.getString(R.string.no_result_default)
     }
 
     override fun loadProductSuccess(model: List<ProductModel>) {
@@ -190,10 +206,36 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
         }
         products.addAll(model)
         productAdapter.notifyDataSetChanged()
+        if (model.isEmpty()) lblResultProducts.text =
+            parentActivity.getString(R.string.no_result_default)
     }
 
-    override fun searchAll(request: String) {
-        ctx?.toast(request)
+    override fun searchAll(products: ProductModel) {
+
+    }
+
+    override fun loadSearchAllNull(request: String) {
+        pbTvStar.gone()
+        pbProducts.gone()
+        pbLooks.gone()
+        lblResultLook.text = getString(R.string.no_result_default)
+        lblResultProducts.text = getString(R.string.no_result_default)
+        lblResultTvStar.text = getString(R.string.no_result_default)
+    }
+
+    override fun searchTvStarSuccessNull(request: String) {
+        pbTvStar.gone()
+        lblResultTvStar.text = getString(R.string.no_result_default)
+    }
+
+    override fun searchProductSuccessNull(request: String) {
+        pbProducts.gone()
+        lblResultProducts.text = getString(R.string.no_result_default)
+    }
+
+    override fun searchOutfitSuccessNull(request: String) {
+        pbTvStar.gone()
+        lblResultTvStar.text = getString(R.string.no_result_default)
     }
 
     override fun onSendDataSuccess() {

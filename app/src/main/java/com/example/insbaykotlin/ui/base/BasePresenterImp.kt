@@ -40,7 +40,7 @@ open class BasePresenterImp<T : BaseView>(private val context: Context) : BasePr
         view = null
     }
 
-    protected fun getTokenAnonymous(request: () -> Unit) {
+    protected fun getNewToken(request: () -> Unit) {
         val compositeDisposable = CompositeDisposable()
         interactor.getAnonymousToken()
             .applyIOWithAndroidMainThread()

@@ -4,6 +4,7 @@ import com.example.insbaykotlin.BuildConfig
 import com.example.insbaykotlin.common.Api
 import com.example.insbaykotlin.common.Param
 import com.example.insbaykotlin.common.util.CommonUtil
+import com.example.insbaykotlin.data.response.SearchMainResponse
 import com.example.insbaykotlin.data.response.SearchOutfitsResponse
 import com.example.insbaykotlin.data.response.SearchProductResponse
 import com.example.insbaykotlin.data.response.SearchTvStarResponse
@@ -77,5 +78,5 @@ interface ServiceAnoFactory {
     fun searchProduct(@QueryMap map: HashMap<String, String>): Single<SearchProductResponse>
 
     @GET(Api.SEARCH_ALL)
-    fun searchAll(@QueryMap map: HashMap<String, String>): Single<String>
+    fun searchAll(@QueryMap map: HashMap<String, String>): Single<SearchMainResponse>
 }

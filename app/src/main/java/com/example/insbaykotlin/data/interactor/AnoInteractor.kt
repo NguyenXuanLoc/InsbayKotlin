@@ -3,6 +3,7 @@ package com.example.insbaykotlin.data.interactor
 import com.example.insbaykotlin.common.Constant
 import com.example.insbaykotlin.common.Param
 import com.example.insbaykotlin.common.ParamKey
+import com.example.insbaykotlin.data.response.SearchMainResponse
 import com.example.insbaykotlin.data.response.SearchOutfitsResponse
 import com.example.insbaykotlin.data.response.SearchProductResponse
 import com.example.insbaykotlin.data.response.SearchTvStarResponse
@@ -34,7 +35,7 @@ class AnoInteractor : BaseInteractor() {
         return anoService.searchProduct(map)
     }
 
-    fun searchAll(request: String, token: String): Single<String> {
+    fun searchAll(request: String, token: String): Single<SearchMainResponse> {
         var map = HashMap<String, String>()
         map[Param.Q] = request
         map[Param.USER_TYPE] = ParamKey.userType
