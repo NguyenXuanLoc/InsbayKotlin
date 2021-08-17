@@ -3,10 +3,7 @@ package com.example.insbaykotlin.data.interactor
 import com.example.insbaykotlin.common.Constant
 import com.example.insbaykotlin.common.Param
 import com.example.insbaykotlin.common.ParamKey
-import com.example.insbaykotlin.data.response.SearchMainResponse
-import com.example.insbaykotlin.data.response.SearchOutfitsResponse
-import com.example.insbaykotlin.data.response.SearchProductResponse
-import com.example.insbaykotlin.data.response.SearchTvStarResponse
+import com.example.insbaykotlin.data.response.*
 import io.reactivex.Single
 
 class AnoInteractor : BaseInteractor() {
@@ -44,4 +41,12 @@ class AnoInteractor : BaseInteractor() {
         return anoService.searchAll(map)
     }
 
+    fun getKFeed(token: String, createAt: String): Single<KFeedResponse> {
+        var map = HashMap<String, String>()
+        map[Param.ACCESS_TOKEN] = token
+        if (createAt.isNotEmpty()) {
+            map[Param.CREATE_AT] = createAt
+        }
+        return anoService.getKFeed(map)
+    }
 }

@@ -26,6 +26,4 @@ class CameraFragment : BaseFragment<CameraView, CameraPresenter>(), CameraView {
     override fun initWidgets() {
     }
 
-    override fun onSendDataSuccess() {
-    }
 }

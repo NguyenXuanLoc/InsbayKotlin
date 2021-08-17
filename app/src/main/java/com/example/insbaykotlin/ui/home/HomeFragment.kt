@@ -1,12 +1,41 @@
 package com.example.insbaykotlin.ui.home
 
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.insbaykotlin.R
 import com.example.insbaykotlin.common.ext.ctx
 import com.example.insbaykotlin.common.ext.setImage
+import com.example.insbaykotlin.data.model.FeedModel
+import com.example.insbaykotlin.widget.PaginationScrollListener
 import com.example.pview.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : BaseFragment<HomeView, HomePresenter>(), HomeView {
+    private var createAt: String = ""
+    private var hasMoreData = true
+    private var isLoading = false
+    private val feeds by lazy { ArrayList<FeedModel>() }
+    private val adapter by lazy { FeedAdapter(parentActivity, feeds) {} }
+
+    private val paginationScrollListener by lazy {
+        object : PaginationScrollListener(rclKFeed.layoutManager as LinearLayoutManager?) {
+            override fun loadMoreItems() {
+                isLoading = true
+                rclKFeed.post {
+                    adapter.addLoadingView()
+                }
+                presenter.getKFeed(createAt)
+            }
+
+            override fun isLastPage(): Boolean {
+                return !hasMoreData
+            }
+
+            override fun isLoading(): Boolean {
+                return isLoading
+            }
+        }
+    }
+
     companion object {
         fun newInstance(): HomeFragment {
             return HomeFragment()
@@ -26,9 +55,27 @@ class HomeFragment : BaseFragment<HomeView, HomePresenter>(), HomeView {
     }
 
     override fun initWidgets() {
-        sdvTest.setImage("https://insbay-file.s3.eu-central-1.amazonaws.com/uploads/5428/album-49e4ee6d-b47d-44ef-86d0-3fd60e231b10/8875e819-89eb-4927-803e-48d77fccb4a1-azienka1.thumbnail.100x100.jpg")
+        rclKFeed.adapter = adapter
+        rclKFeed.layoutManager =
+            LinearLayoutManager(parentActivity, LinearLayoutManager.VERTICAL, false)
+        rclKFeed.setHasFixedSize(true)
+        setPaginationLayoutManager()
+        presenter.getKFeed()
     }
 
-    override fun onSendDataSuccess() {
+    private fun setPaginationLayoutManager() {
+        paginationScrollListener.setLayoutManager(rclKFeed.layoutManager as LinearLayoutManager)
+        rclKFeed.addOnScrollListener(paginationScrollListener)
     }
+
+    override fun loadKFeedSuccess(models: List<FeedModel>, nextPage: String) {
+        isLoading = false
+        if (createAt.isEmpty()) {
+            feeds.clear()
+        } else adapter.removeLoadingView()
+        createAt = nextPage
+        feeds.addAll(models)
+        adapter.notifyDataSetChanged()
+    }
+
 }

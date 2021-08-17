@@ -237,7 +237,4 @@ class SearchFragment : BaseFragment<SearchView, SearchPresenter>(), SearchView {
         pbTvStar.gone()
         lblResultTvStar.text = getString(R.string.no_result_default)
     }
-
-    override fun onSendDataSuccess() {
-    }
 }

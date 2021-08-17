@@ -1,6 +1,6 @@
 package com.example.pview.ui.base
 
-import com.example.task.ui.base.BaseView
+import com.example.insbaykotlin.ui.base.BaseView
 
 abstract class BasePresenter<T : BaseView>() {
 

@@ -26,6 +26,4 @@ class ProfileFragment : BaseFragment<ProfileView, ProfilePresenter>(), ProfileVi
     override fun initWidgets() {
     }
 
-    override fun onSendDataSuccess() {
-    }
 }

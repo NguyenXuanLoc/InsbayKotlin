@@ -6,7 +6,7 @@ import com.example.insbaykotlin.common.ext.applyIOWithAndroidMainThread
 import com.example.insbaykotlin.common.util.CommonUtil
 import com.example.insbaykotlin.data.interactor.PubInteractor
 import com.example.insbaykotlin.progressbar.MyProgressDialog
-import com.example.task.ui.base.BaseView
+import com.example.insbaykotlin.ui.base.BaseView
 import io.reactivex.disposables.CompositeDisposable
 import timber.log.Timber
 

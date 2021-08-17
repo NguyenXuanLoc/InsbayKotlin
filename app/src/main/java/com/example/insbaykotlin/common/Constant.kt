@@ -25,6 +25,7 @@ object Api {
     const val SEARCH_TV_STAR = "users/api/v2/users/list_type/7"
     const val SEARCH_PRODUCT = "clothes/api/v2/clothes/famous_clothes_with_condition"
     const val SEARCH_ALL = "search/api/v2/search/main"
+    const val GET_K_FEED = "feed/api/v2/kfeed"
 }
 
 object Param {
@@ -34,6 +35,7 @@ object Param {
     const val ACCESS_TOKEN = "access_token"
     const val COUNTRY = "country"
     const val Q = "q"
+    const val CREATE_AT = "created_at"
 }
 
 object ParamKey {

@@ -13,12 +13,11 @@ import com.example.insbaykotlin.common.ext.showApiCallError
 import com.example.insbaykotlin.common.ext.showNetworkError
 import com.example.insbaykotlin.common.ext.visible
 import com.example.insbaykotlin.common.util.CommonUtil
+import com.example.insbaykotlin.ui.base.BaseView
 import com.example.pview.ui.base.BasePresenterImp
 import kotlinx.android.synthetic.main.activity_base.*
 import org.jetbrains.anko.contentView
 import org.jetbrains.anko.ctx
-import org.jetbrains.anko.toast
-import java.util.*
 
 
 abstract class BaseActivity<V : BaseView, P : BasePresenterImp<V>> : AppCompatActivity(), BaseView {
@@ -137,10 +136,6 @@ abstract class BaseActivity<V : BaseView, P : BasePresenterImp<V>> : AppCompatAc
 
     override fun onApiCallError(e: Throwable?, code: Int) {
         showApiCallError(code)
-    }
-
-    override fun onSendDataSuccess() {
-//        toast(getString(R.string.sent_data_success))
     }
 
 

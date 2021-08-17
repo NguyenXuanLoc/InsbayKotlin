@@ -1,9 +1,8 @@
-package com.example.task.ui.base
+package com.example.insbaykotlin.ui.base
 
 import com.example.insbaykotlin.common.ErrorCode
 
 interface BaseView {
-    fun onSendDataSuccess()
     fun onApiCallError(e: Throwable? = null, code: Int = ErrorCode.API_ERROR) {}
 
     fun onNetworkError() {}

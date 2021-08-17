@@ -4,10 +4,7 @@ import com.example.insbaykotlin.BuildConfig
 import com.example.insbaykotlin.common.Api
 import com.example.insbaykotlin.common.Param
 import com.example.insbaykotlin.common.util.CommonUtil
-import com.example.insbaykotlin.data.response.SearchMainResponse
-import com.example.insbaykotlin.data.response.SearchOutfitsResponse
-import com.example.insbaykotlin.data.response.SearchProductResponse
-import com.example.insbaykotlin.data.response.SearchTvStarResponse
+import com.example.insbaykotlin.data.response.*
 import com.google.gson.GsonBuilder
 import io.reactivex.Single
 import okhttp3.OkHttpClient
@@ -79,4 +76,8 @@ interface ServiceAnoFactory {
 
     @GET(Api.SEARCH_ALL)
     fun searchAll(@QueryMap map: HashMap<String, String>): Single<SearchMainResponse>
+
+    @GET(Api.GET_K_FEED)
+    fun getKFeed(@QueryMap map: HashMap<String, String>): Single<KFeedResponse>
+
 }

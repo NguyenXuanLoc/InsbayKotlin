@@ -1,8 +1,8 @@
 package com.example.insbaykotlin.data.model
+
 import com.google.gson.annotations.SerializedName
 
 class ImageModel(
-
 	@SerializedName("album_id") val album_id: String,
 	@SerializedName("created_at") val created_at: String,
 	@SerializedName("file_url") val file_url: FileUrlModel,
