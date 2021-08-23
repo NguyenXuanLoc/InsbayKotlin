@@ -10,6 +10,7 @@ import com.example.insbaykotlin.data.interactor.PubInteractor
 import com.facebook.drawee.backends.pipeline.Fresco
 import com.facebook.imagepipeline.core.ImagePipelineConfig
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 import org.jetbrains.anko.ctx
 import timber.log.Timber
 
@@ -51,7 +52,6 @@ class MyApplication : MultiDexApplication() {
                     Timber.e("default Token: " + it.message)
                 }
             ).addToCompositeDisposable(compositeDisposable)
-        compositeDisposable.dispose()
     }
 
     private fun initTimber() {

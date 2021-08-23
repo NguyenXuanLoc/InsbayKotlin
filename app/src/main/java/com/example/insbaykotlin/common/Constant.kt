@@ -26,6 +26,7 @@ object Api {
     const val SEARCH_PRODUCT = "clothes/api/v2/clothes/famous_clothes_with_condition"
     const val SEARCH_ALL = "search/api/v2/search/main"
     const val GET_K_FEED = "feed/api/v2/kfeed"
+    const val REFRESH_USER = "users/api/v2/users/profile"
 }
 
 object Param {

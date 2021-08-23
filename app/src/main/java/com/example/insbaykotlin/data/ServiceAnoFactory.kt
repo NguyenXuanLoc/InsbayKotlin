@@ -4,17 +4,18 @@ import com.example.insbaykotlin.BuildConfig
 import com.example.insbaykotlin.common.Api
 import com.example.insbaykotlin.common.Param
 import com.example.insbaykotlin.common.util.CommonUtil
+import com.example.insbaykotlin.data.model.AnonymousModel
 import com.example.insbaykotlin.data.response.*
 import com.google.gson.GsonBuilder
 import io.reactivex.Single
 import okhttp3.OkHttpClient
+import okhttp3.RequestBody
 import okhttp3.logging.HttpLoggingInterceptor
+import org.json.JSONObject
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Query
-import retrofit2.http.QueryMap
+import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
 interface ServiceAnoFactory {
@@ -80,4 +81,11 @@ interface ServiceAnoFactory {
     @GET(Api.GET_K_FEED)
     fun getKFeed(@QueryMap map: HashMap<String, String>): Single<KFeedResponse>
 
+    @FormUrlEncoded
+    @POST(Api.GET_ANONYMOUS_TOKEN)
+    fun getAnonymousToken(@FieldMap params: HashMap<String, String>): Single<AnonymousModel>
+
+    //    @FormUrlEncoded
+    @POST(Api.REFRESH_USER)
+    fun refreshUser(@Body ob: JSONObject): Single<String>
 }
